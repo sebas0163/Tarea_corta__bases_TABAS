@@ -1,0 +1,22 @@
+<h3>Equipaje</h3>
+<br>
+<button type="button" class="btn btn-primary" (click)="addBaggage()">Agregar maleta</button>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let column of headers">
+                {{column}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let suitcase of baggage">
+            <th scope="row">{{ suitcase.id }}</th>
+            <td>{{ suitcase.user }}</td>
+            <td>{{ suitcase.color }}</td>
+            <td>{{ suitcase.weight }}</td>
+            <td>{{ suitcase.cost }}</td>
+        </tr>
+    </tbody>
+</table>

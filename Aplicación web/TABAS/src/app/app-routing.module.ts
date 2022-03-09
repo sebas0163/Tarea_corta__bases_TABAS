@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { WorkerRegistrationComponent } from './worker-registration/worker-registration.component';
+import { BaggageComponent } from './baggage/baggage.component';
+import { NewBaggageComponent } from './new-baggage/new-baggage.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/login" },
   { path: "login", component: LoginComponent },
   { path: "worker-registration", component: WorkerRegistrationComponent },
+  { path: "baggage", component: BaggageComponent },
+  { path: "new-baggage", component: NewBaggageComponent }
 ];
 
 @NgModule({

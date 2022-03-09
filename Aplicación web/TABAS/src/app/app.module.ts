@@ -8,12 +8,16 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WorkerRegistrationComponent } from './worker-registration/worker-registration.component';
+import { BaggageComponent } from './baggage/baggage.component';
+import { NewBaggageComponent } from './new-baggage/new-baggage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    WorkerRegistrationComponent
+    WorkerRegistrationComponent,
+    BaggageComponent,
+    NewBaggageComponent
   ],
   imports: [
     BrowserModule,
