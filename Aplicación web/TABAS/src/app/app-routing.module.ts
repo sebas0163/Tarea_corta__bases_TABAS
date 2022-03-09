@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { WorkerRegistrationComponent } from './worker-registration/worker-registration.component';
 import { BaggageComponent } from './baggage/baggage.component';
 import { NewBaggageComponent } from './new-baggage/new-baggage.component';
+import { WorkersComponent } from './workers/workers.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/login" },
   { path: "login", component: LoginComponent },
   { path: "worker-registration", component: WorkerRegistrationComponent },
   { path: "baggage", component: BaggageComponent },
-  { path: "new-baggage", component: NewBaggageComponent }
+  { path: "new-baggage", component: NewBaggageComponent },
+  { path: "workers", component: WorkersComponent }
 ];
 
 @NgModule({

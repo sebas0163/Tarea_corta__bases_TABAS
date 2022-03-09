@@ -10,6 +10,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WorkerRegistrationComponent } from './worker-registration/worker-registration.component';
 import { BaggageComponent } from './baggage/baggage.component';
 import { NewBaggageComponent } from './new-baggage/new-baggage.component';
+import { WorkersComponent } from './workers/workers.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NewBaggageComponent } from './new-baggage/new-baggage.component';
     LoginComponent,
     WorkerRegistrationComponent,
     BaggageComponent,
-    NewBaggageComponent
+    NewBaggageComponent,
+    WorkersComponent
   ],
   imports: [
     BrowserModule,

@@ -2,17 +2,18 @@
     <div class="row">
         <div class="login-container col-lg-4 col-md-6 col-sm-8 col-xs-12">
             <div class="login-title text-center">
-                <h2><span>Worker registration</span></h2>
+                <h2><span>Registrar trabajador</span></h2>
             </div>
             <div class="login-content">
                 <div class="login-header ">
-                    <h5>Please enter below, the required information</h5>
+                    <h5>Por favor agregue la información requerida a continuación</h5>
                 </div>
                 <div class="login-body">
-                    <form role="form" action="" method="post" class="login-form">
+                    <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+
                         <div class="form-group ">
                             <div class="pos-r">
-                                <input id="form-username" type="text" name="form-username" placeholder="Name"
+                                <input id="form-username" type="text" name="form-username" placeholder="Nombre"
                                     class="form-username form-control">
                                 <i class="fa fa-user"></i>
                             </div>
@@ -22,7 +23,7 @@
                         </div>
                         <div class="form-group ">
                             <div class="pos-r">
-                                <input id="form-lastname" type="text" name="form-lastname" placeholder="Last Name"
+                                <input id="form-lastname" type="text" name="form-lastname" placeholder="Apellidos"
                                     class="form-lastname form-control">
                                 <i class="fa fa-user"></i>
                             </div>
@@ -32,7 +33,7 @@
                         </div>
                         <div class="form-group ">
                             <div class="pos-r">
-                                <input id="form-id" type="text" name="form-id" placeholder="Id"
+                                <input id="form-id" type="text" name="form-id" placeholder="Cédula"
                                     class="form-id form-control">
                                 <i class="fa fa-user"></i>
                             </div>
@@ -40,28 +41,8 @@
                         <div class="br">
                             <br>
                         </div>
-                        <div class="form-group ">
-                            <div class="pos-r">
-                                <input id="form-email" type="text" name="form-email" placeholder="Email"
-                                    class="form-email form-control">
-                                <i class="fa fa-email"></i>
-                            </div>
-                        </div>
-                        <div class="br">
-                            <br>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">
-                                <input id="form-password" type="password" name="form-password" placeholder="Password"
-                                    class="form-password form-control">
-                                <i class="fa fa-lock"></i>
-                            </div>
-                        </div>
-                        <div class="br">
-                            <br>
-                        </div>
                         <div class="role title ">
-                            <h5>Choose your role</h5>
+                            <h5>Elije el rol del trabajador</h5>
                         </div>
                         <div class="br">
                             <br>
@@ -105,7 +86,7 @@
                         </div>
                         <div class="form-group">
                             <button type="submit"
-                                class="btn btn-primary form-control"><strong>Register</strong></button>
+                                class="btn btn-primary form-control"><strong>Registrar</strong></button>
                         </div>
 
                     </form>
