@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suitcase } from '../classes/suitcase';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-baggage',
@@ -9,9 +10,13 @@ import { Suitcase } from '../classes/suitcase';
 })
 export class BaggageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  baggage: Suitcase[];
 
-  baggage: Suitcase[] = [];
+  constructor(private router: Router, private data: DataService) {
+    this.baggage = this.data.baggage;
+  }
+
+
 
   headers = ["Número de maleta", "Usuario", "Color", "Peso", "Costo de envío"]
 
