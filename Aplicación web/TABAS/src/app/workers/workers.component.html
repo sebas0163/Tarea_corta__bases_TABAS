@@ -2,6 +2,7 @@
 <br>
 <button type="button" class="btn btn-primary" (click)="addWorker()">Agregar Trabajador</button>
 <br>
+<br>
 <table class="table">
     <thead>
         <tr>
@@ -12,10 +13,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let worker of workers">
-            <th scope="row">{{ worker.name }}</th>
-            <td>{{ worker.lastname }}</td>
-            <td>{{ worker.id }}</td>
-            <td>{{ worker.role }}</td>
+            <th scope="row">{{ worker.nombre1 }} {{ worker.nombre2 }}</th>
+            <td>{{ worker.apellido1 }} {{ worker.apellido2 }}</td>
+            <td>{{ worker.cedula }}</td>
+            <td>{{ worker.rol }}</td>
 
         </tr>
     </tbody>

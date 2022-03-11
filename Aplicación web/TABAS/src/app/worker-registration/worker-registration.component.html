@@ -9,12 +9,22 @@
                     <h5>Por favor agregue la información requerida a continuación</h5>
                 </div>
                 <div class="login-body">
-                    <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+                    <form [formGroup]="sendForm" (ngSubmit)="postForm(sendForm.value)">
 
                         <div class="form-group ">
                             <div class="pos-r">
                                 <input id="form-username" type="text" name="form-username" placeholder="Nombre"
-                                    class="form-username form-control">
+                                    class="form-username form-control" formControlName="nombre1">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-username1" type="text" name="form-username1" placeholder="Nombre"
+                                    class="form-username form-control" formControlName="nombre2">
                                 <i class="fa fa-user"></i>
                             </div>
                         </div>
@@ -24,7 +34,17 @@
                         <div class="form-group ">
                             <div class="pos-r">
                                 <input id="form-lastname" type="text" name="form-lastname" placeholder="Apellidos"
-                                    class="form-lastname form-control">
+                                    class="form-lastname form-control" formControlName="apellido1">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-lastname1" type="text" name="form-lastname1" placeholder="Apellidos"
+                                    class="form-lastname form-control" formControlName="apellido2">
                                 <i class="fa fa-user"></i>
                             </div>
                         </div>
@@ -34,7 +54,7 @@
                         <div class="form-group ">
                             <div class="pos-r">
                                 <input id="form-id" type="text" name="form-id" placeholder="Cédula"
-                                    class="form-id form-control">
+                                    class="form-id form-control" formControlName="cedula">
                                 <i class="fa fa-user"></i>
                             </div>
                         </div>
@@ -48,7 +68,8 @@
                             <br>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <input class="form-check-input" type="radio" value="Embarcador" id="flexRadioDefault1"
+                                formControlName="rol">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Embarcador
                             </label>
@@ -57,8 +78,8 @@
                             <br>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                checked>
+                            <input class="form-check-input" value="Scan" type="radio" id="flexRadioDefault2" checked
+                                formControlName="rol">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Scan
                             </label>
@@ -67,7 +88,8 @@
                             <br>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <input class="form-check-input" value="Administrador" type="radio" id="flexRadioDefault3"
+                                formControlName="rol">
                             <label class="form-check-label" for="flexRadioDefault3">
                                 Administrador
                             </label>
@@ -76,7 +98,8 @@
                             <br>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                            <input class="form-check-input" value="Recepcionista" type="radio" id="flexRadioDefault4"
+                                formControlName="rol">
                             <label class="form-check-label" for="flexRadioDefault4">
                                 Recepcionista
                             </label>

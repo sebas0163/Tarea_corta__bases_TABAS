@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WorkerI } from '../models/worker.interface';
+import { DataI } from '../models/data.interface';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-workers',
@@ -11,10 +13,26 @@ export class WorkersComponent implements OnInit {
 
   headers = ["Nombre", "Apellidos", "Cédula", "Rol"];
   workers: WorkerI[] = [];
+  //workers: any = [];
+  //data!: DataI;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
+    // this.api.getWorkers().subscribe(data => {
+    //   this.data = data;
+    //   this.workers = this.data.data;
+    //   console.log(this.workers);
+    // })
+    this.api.getWorkers().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.workers = result;
+      console.log(result);
+    })
+
+
   }
 
   addWorker() {

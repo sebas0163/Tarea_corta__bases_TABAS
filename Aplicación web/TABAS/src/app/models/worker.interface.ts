@@ -1,6 +1,8 @@
 export interface WorkerI {
-    name: string,
-    lastname: string,
-    id: number,
-    role: string
+    nombre1: string,
+    nombre2: string,
+    apellido1: string,
+    apellido2: string,
+    rol: string,
+    cedula: number
 }
