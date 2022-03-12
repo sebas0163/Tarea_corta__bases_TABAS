@@ -1,0 +1,23 @@
+<h3>Registro de trabajadores</h3>
+<br>
+<button type="button" class="btn btn-primary" (click)="addWorker()">Agregar Trabajador</button>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let column of headers">
+                {{column}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let worker of workers">
+            <th scope="row">{{ worker.nombre1 }} {{ worker.nombre2 }}</th>
+            <td>{{ worker.apellido1 }} {{ worker.apellido2 }}</td>
+            <td>{{ worker.cedula }}</td>
+            <td>{{ worker.rol }}</td>
+
+        </tr>
+    </tbody>
+</table>

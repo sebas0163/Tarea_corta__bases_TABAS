@@ -1,0 +1,144 @@
+<div class="container ">
+    <div class="row">
+        <div class="login-container col-lg-4 col-md-6 col-sm-8 col-xs-12">
+            <div class="login-title text-center">
+                <h2><span>Registrar trabajador</span></h2>
+            </div>
+            <div class="login-content">
+                <div class="login-header ">
+                    <h5>Por favor agregue la información requerida a continuación</h5>
+                </div>
+                <div class="login-body">
+                    <form [formGroup]="sendForm" (ngSubmit)="postForm(sendForm.value)">
+
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-username" type="text" name="form-username" placeholder="Primer Nombre"
+                                    class="form-username form-control" formControlName="nombre1">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-username1" type="text" name="form-username1"
+                                    placeholder="Segundo Nombre" class="form-username form-control"
+                                    formControlName="nombre2">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-lastname" type="text" name="form-lastname" placeholder="Primer Apellido"
+                                    class="form-lastname form-control" formControlName="apellido1">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-lastname1" type="text" name="form-lastname1"
+                                    placeholder="Segundo Apellido" class="form-lastname form-control"
+                                    formControlName="apellido2">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-id" type="text" name="form-id" placeholder="Cédula"
+                                    class="form-id form-control" formControlName="cedula">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-us" type="text" name="form-us" placeholder="Nombre de usuario"
+                                    class="form-us form-control" formControlName="usuario">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group ">
+                            <div class="pos-r">
+                                <input id="form-ps" type="text" name="form-ps" placeholder="Contraseña"
+                                    class="form-ps form-control" formControlName="password">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="role title ">
+                            <h5>Elije el rol del trabajador</h5>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" value="Embarcador" id="flexRadioDefault1"
+                                formControlName="rol">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Embarcador
+                            </label>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" value="Scan" type="radio" id="flexRadioDefault2" checked
+                                formControlName="rol">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Scan
+                            </label>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" value="Administrador" type="radio" id="flexRadioDefault3"
+                                formControlName="rol">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Administrador
+                            </label>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" value="Recepcionista" type="radio" id="flexRadioDefault4"
+                                formControlName="rol">
+                            <label class="form-check-label" for="flexRadioDefault4">
+                                Recepcionista
+                            </label>
+                        </div>
+                        <div class="br">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit"
+                                class="btn btn-primary form-control"><strong>Registrar</strong></button>
+                        </div>
+
+                    </form>
+                </div> <!-- end  login-body -->
+            </div><!-- end  login-content -->
+
+        </div> <!-- end  login-container -->
+
+    </div>
+</div><!-- end container -->
