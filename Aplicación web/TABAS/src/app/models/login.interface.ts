@@ -1,5 +1,5 @@
-export interface LoginI{
-    email:string,
-    password:string,
-    acces:string
+export interface LoginI {
+    username: string,
+    password: string,
+    acces: string
 }

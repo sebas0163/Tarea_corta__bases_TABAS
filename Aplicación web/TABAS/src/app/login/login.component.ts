@@ -13,13 +13,13 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
+    username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     access: new FormControl('Admin', Validators.required)
   })
 
   masterUser = new User(
-    "master@tabas.com",
+    "master",
     "master123"
   );
 
@@ -37,11 +37,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    let femail = this.loginForm.get('email')?.value;
+    let fusername = this.loginForm.get('username')?.value;
     let fpassword = this.loginForm.get('password')?.value;
-    console.log(femail);
+    console.log(fusername);
     console.log(fpassword);
-    if (femail == this.masterUser.email &&
+    if (fusername == this.masterUser.username &&
       this.masterUser.password == fpassword) {
       this.router.navigate(['baggage']);
     } else {
