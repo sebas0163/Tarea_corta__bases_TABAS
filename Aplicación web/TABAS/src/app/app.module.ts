@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TablaComponent } from './bagCar/tabla/tabla.component';
+import { CarFormComponent } from './bagCar/car-form/car-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TablaComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CarFormComponent]
 })
 export class AppModule { }
