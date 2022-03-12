@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: "worker-registration", component: WorkerRegistrationComponent },
   { path: "baggage", component: BaggageComponent },
   { path: "new-baggage", component: NewBaggageComponent },
-  { path: "workers", component: WorkersComponent }
+  { path: "workers", component: WorkersComponent },
+  { path: "bagcart", component: TablaComponent }
 ];
 
 @NgModule({

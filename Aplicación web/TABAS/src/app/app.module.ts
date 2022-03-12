@@ -21,7 +21,7 @@ import { WorkersComponent } from './workers/workers.component';
     WorkerRegistrationComponent,
     BaggageComponent,
     NewBaggageComponent,
-    WorkersComponent
+    WorkersComponent,
     AppComponent,
     TablaComponent,
     CarFormComponent
