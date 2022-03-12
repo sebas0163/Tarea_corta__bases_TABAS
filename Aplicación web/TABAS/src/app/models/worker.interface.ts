@@ -5,4 +5,6 @@ export interface WorkerI {
     apellido2: string,
     rol: string,
     cedula: number
+    //usuario: string,
+    //password: string
 }

@@ -4,7 +4,6 @@ import { ResponseI } from '../models/response.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { WorkerI } from '../models/worker.interface';
-import { DataI } from '../models/data.interface';
 
 @Injectable({
   providedIn: 'root'
