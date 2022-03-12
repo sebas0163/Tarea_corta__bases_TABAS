@@ -21,6 +21,15 @@
             <input type="text" class="form-control" formControlName="cost">
         </div>
         <br>
+        <div class="dd">
+            <select class="dds" formControlName="flight">
+                <option value="">Asignar vuelo</option>
+                <option *ngFor="let flight of dropdownOptions" [ngValue]="flight">
+                    {{ flight }}
+                </option>
+            </select>
+        </div>
+        <br>
         <div class="relative">
             <button type="submit" class="btn btn-primary" style="margin-right: 10px;"
                 (click)="addBaggage()">Save</button>

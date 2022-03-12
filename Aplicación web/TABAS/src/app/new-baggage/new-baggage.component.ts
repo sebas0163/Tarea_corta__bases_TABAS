@@ -16,8 +16,11 @@ export class NewBaggageComponent implements OnInit {
     user: new FormControl(''),
     color: new FormControl(''),
     weight: new FormControl(''),
-    cost: new FormControl('')
+    cost: new FormControl(''),
+    flight: new FormControl('')
   })
+
+  dropdownOptions: any = ["SK 3341", "TP 1025", "UX 6025", "SN 3722", "JAI8686"];
 
   constructor(private router: Router, private data: DataService) { }
 
@@ -34,13 +37,15 @@ export class NewBaggageComponent implements OnInit {
     let fcolor = this.newForm.get('color')?.value;
     let fweight = this.newForm.get('weight')?.value;
     let fcost = this.newForm.get('cost')?.value;
+    let fflight = this.newForm.get('flight')?.value;
 
     let baggage = new Suitcase(
       fid,
       fuser,
       fcolor,
       fweight,
-      fcost
+      fcost,
+      fflight
     )
 
     this.data.add(baggage);

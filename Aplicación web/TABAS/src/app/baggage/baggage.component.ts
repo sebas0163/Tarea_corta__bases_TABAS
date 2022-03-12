@@ -18,7 +18,7 @@ export class BaggageComponent implements OnInit {
 
 
 
-  headers = ["Número de maleta", "Usuario", "Color", "Peso", "Costo de envío"]
+  headers = ["Número de maleta", "Usuario", "Color", "Peso", "Costo de envío", "Vuelo"]
 
   ngOnInit(): void {
   }
