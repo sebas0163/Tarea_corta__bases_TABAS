@@ -18,13 +18,12 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/bagid"
-        android:layout_width="400"
-        android:layout_height="50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
         android:hint="Inserte El ID de la maleta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="105dp" />
 
     <Button
         android:id="@+id/button2"
