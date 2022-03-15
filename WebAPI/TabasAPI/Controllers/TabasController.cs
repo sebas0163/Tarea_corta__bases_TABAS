@@ -56,16 +56,47 @@ namespace TabasAPI.Controllers
             
             return false;
         }
+        [Route("api/test")]
+        [HttpGet]
+        public string GetTest()
+        {
+            Trabajador trabajador = new Trabajador {nombre1 = "hi",
+                                                    nombre2 = "ad",
+                                                    apellido1 = "ada",
+                                                    apellido2 = "adsdad",
+                                                    rol = "rol",
+                                                    cedula = 111};
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(trabajador);
+            Newtonsoft.Json.Linq.JToken trabajadores_list =  getEntity("Trabajadores");
+            Newtonsoft.Json.Linq.JToken usuarios_list =  getEntity("Usuarios");
+            Newtonsoft.Json.Linq.JToken maletas_list =  getEntity("Maletas");
+            trabajadores_list.Last.AddAfterSelf(Newtonsoft.Json.Linq.JObject.Parse(json));
 
+            Newtonsoft.Json.Linq.JObject final = new  Newtonsoft.Json.Linq.JObject();
+            final.Add("Trabajadores", trabajadores_list);
+            final.Add("Usuarios", usuarios_list);
+            final.Add("Maletas", maletas_list);
+
+            return final.ToString();
+
+        }
         [Route("api/post")]
         [HttpPost]
         public string Post([FromBody] Trabajador trabajador)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(trabajador);
-            Newtonsoft.Json.Linq.JToken list =  getEntity("Trabajadores");
-            list.Last.AddAfterSelf(Newtonsoft.Json.Linq.JObject.Parse(json));
+            Newtonsoft.Json.Linq.JToken trabajadores_list =  getEntity("Trabajadores");
+            Newtonsoft.Json.Linq.JToken usuarios_list =  getEntity("Usuarios");
+            Newtonsoft.Json.Linq.JToken maletas_list =  getEntity("Maletas");
+            trabajadores_list.Last.AddAfterSelf(Newtonsoft.Json.Linq.JObject.Parse(json));
 
-            return list.ToString();
+            Newtonsoft.Json.Linq.JObject final = new  Newtonsoft.Json.Linq.JObject();
+            final.Add("Trabajadores", trabajadores_list);
+            final.Add("Usuarios", usuarios_list);
+            final.Add("Maletas", maletas_list);
+            System.IO.File.WriteAllText("DataBase/datos.json", final.ToString());
+            return final.ToString();
+            
         }
 
         //Metodos de manejo de json

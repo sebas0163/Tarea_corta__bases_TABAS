@@ -1,88 +1,93 @@
 {
-    "Maletas": 
-    [
-        {
-            "peso" : 10,
-            "costo" : 50,
-            "numero" : 1,
-            "color" : "rojo",
-            "estado" : true
-        },
-        {
-            "peso" : 5,
-            "costo" : 25,
-            "numero" : 2,
-            "color" : "azul",
-            "estado" : false
-        },
-        {
-            "peso" : 7,
-            "costo" : 30,
-            "numero" : 3,
-            "color" : "verde",
-            "estado" : true
-        }
-
-    ],
-    "Trabajadores":
-    [
-        {
-            "nombre1" : "Carlos",
-            "nombre2" : "Steve",
-            "apellido1" : "Alvarado",
-            "apellido2" : "Mendez",
-            "rol" : "Embarcador",
-            "cedula" : 1
-        },
-        {
-            "nombre1" : "Natalia",
-            "nombre2" : "Angeles",
-            "apellido1" : "Gonzalez",
-            "apellido2" : "Bermudez",
-            "rol" : "Scan",
-            "cedula" : 2
-        
-        }
-
-    ],
-    "Usuarios":
-    [
-        {
-            "nombre1" : "UCarlos",
-            "nombre2" : "USteve",
-            "apellido1" : "UAlvarado",
-            "apellido2" : "UMendez",
-            "Telefono" : 88888888,
-            "Cedula" : 12
-        
-        },
-        {
-            "nombre1" : "UNatalia",
-            "nombre2" : "UAngeles",
-            "apellido1" : "UGonzalez",
-            "apellido2" : "UBermudez",
-            "telefono" : 88888881,
-            "cedula" : 23
-        
-        },
-        {
-            "nombre1" : "UDennis",
-            "nombre2" : "UAlejandro",
-            "apellido1" : "UJimenez",
-            "apellido2" : "UCampos",
-            "telefono" : 88888848,
-            "cedula" : 34
-        
-        },
-        {
-            "nombre1" : "USebastian",
-            "nombre2" : "UJosue",
-            "apellido1" : "UMoya",
-            "apellido2" : "UMonge",
-            "telefono" : 88488888,
-            "cedula" : 45
-        
-        }
-
-    ]
+  "Trabajadores": [
+    {
+      "nombre1": "Carlos",
+      "nombre2": "Steve",
+      "apellido1": "Alvarado",
+      "apellido2": "Mendez",
+      "rol": "Embarcador",
+      "cedula": 1
+    },
+    {
+      "nombre1": "Natalia",
+      "nombre2": "Angeles",
+      "apellido1": "Gonzalez",
+      "apellido2": "Bermudez",
+      "rol": "Scan",
+      "cedula": 2
+    },
+    {
+      "nombre1": "Cs",
+      "nombre2": "asd",
+      "apellido1": "asd",
+      "apellido2": "asfgsdfd",
+      "rol": "asd",
+      "cedula": 7
+    },
+    {
+      "nombre1": "AAs",
+      "nombre2": "BABd",
+      "apellido1": "aasd",
+      "apellido2": "asfgsdfd",
+      "rol": "asd",
+      "cedula": 7
+    }
+  ],
+  "Usuarios": [
+    {
+      "nombre1": "UCarlos",
+      "nombre2": "USteve",
+      "apellido1": "UAlvarado",
+      "apellido2": "UMendez",
+      "Telefono": 88888888,
+      "Cedula": 12
+    },
+    {
+      "nombre1": "UNatalia",
+      "nombre2": "UAngeles",
+      "apellido1": "UGonzalez",
+      "apellido2": "UBermudez",
+      "telefono": 88888881,
+      "cedula": 23
+    },
+    {
+      "nombre1": "UDennis",
+      "nombre2": "UAlejandro",
+      "apellido1": "UJimenez",
+      "apellido2": "UCampos",
+      "telefono": 88888848,
+      "cedula": 34
+    },
+    {
+      "nombre1": "USebastian",
+      "nombre2": "UJosue",
+      "apellido1": "UMoya",
+      "apellido2": "UMonge",
+      "telefono": 88488888,
+      "cedula": 45
+    }
+  ],
+  "Maletas": [
+    {
+      "peso": 10,
+      "costo": 50,
+      "numero": 1,
+      "color": "rojo",
+      "estado": true
+    },
+    {
+      "peso": 5,
+      "costo": 25,
+      "numero": 2,
+      "color": "azul",
+      "estado": false
+    },
+    {
+      "peso": 7,
+      "costo": 30,
+      "numero": 3,
+      "color": "verde",
+      "estado": true
+    }
+  ]
 }

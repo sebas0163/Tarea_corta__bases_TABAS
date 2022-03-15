@@ -1,10 +1,38 @@
-{
-    "Numero de vuelo" : "7",
-    "Tipo de Avion" : "Airbus A319-100",
-    "Capacidad" : "144",
-    "Capacidad de maletas" : "144",
-    "Maletas en BagCArt" : "100",
-    "Maletas a bordo" : "70",
-    "Maletas rechazadas" : "30"
+[{
+    "nombre": "Mariel",
+    "Cedula": "102151",
+    "maletas": [{
+      "peso": "69",
+      "costo": "100",
+      "numero": "600",
+      "color": "verde"
 
-}
+    },
+    {
+      "peso": "20",
+      "costo": "40",
+      "numero": "680",
+      "color": "azul"
+    }
+  ]
+  },
+  {
+    "nombre": "Jaime",
+    "Cedula": "15415",
+    "maletas": [{
+      "peso": "78",
+      "costo": "90",
+      "numero": "780",
+      "color": "morado"
+
+    },
+    {
+      "peso": "36",
+      "costo": "50",
+      "numero": "580",
+      "color": "azul"
+    }
+  ]
+  }
+
+]
