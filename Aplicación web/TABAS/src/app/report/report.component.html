@@ -1,29 +1,33 @@
-<h2 style="margin-top: 0.5cm;">Reporte de Maletas por Usuario</h2>
-<div *ngIf="information">
-  <div *ngFor="let item of information">
-  <h3 style="margin-top: 1cm;">{{item.nombre}}</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Número</th>
-          <th>Costo</th>
-          <th>Peso</th>
-          <th>Color</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let maleta of item.maletas">
-        <td>{{maleta.numero}}</td>
-        <td>{{maleta.costo}}</td>
-        <td>{{maleta.peso}}</td>
-        <td>{{maleta.color}}</td>
-        </tr>
-    </tbody>
-    </table>
+<div id="content" #content>
+  <img src="assets/images/logo.png" >
+  <label id="titulo"#titulo from="ejemplo" style="margin-top: 0.5cm;">Maletas por Usuario</label>
+  <div *ngIf="information">
+    <div *ngFor="let item of information">
+      <label id="nombre"#nombre from="nombre" style="margin-top: 0.5cm;">Nombre: {{item.nombre}}</label>
+      <label id="cedula"#cedula from="cedula" style="margin-top: 0.5cm; margin-left: 1cm;">Cédula: {{item.Cedula}}</label>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Costo</th>
+            <th>Peso</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let maleta of item.maletas">
+          <td>{{maleta.numero}}</td>
+          <td>{{maleta.costo}}</td>
+          <td>{{maleta.peso}}</td>
+          <td>{{maleta.color}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-dark me-md-2" type="button">Guardar</button>
+  <button class="btn btn-dark me-md-2" type="button" (click)="downloadPDF()">Guardar</button>
   <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage">Regresar</button>
 </div>
 

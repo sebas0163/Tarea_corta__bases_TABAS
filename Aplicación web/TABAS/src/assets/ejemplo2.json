@@ -1,0 +1,50 @@
+[
+  {
+    "numero": "107",
+    "tipo": "tipo1",
+    "capacidad" : "200",
+    "maletas" : "500",
+    "maletasBagCarts" : "500",
+    "rechazadas": "20"
+  },
+  {
+    "numero": "98",
+    "tipo": "tipo2",
+    "capacidad" : "350",
+    "maletas" : "600",
+    "maletasBagCarts" : "450",
+    "rechazadas": "10"
+  },
+  {
+    "numero": "46",
+    "tipo": "tipo1",
+    "capacidad" : "452",
+    "maletas" : "789",
+    "maletasBagCarts" : "500",
+    "rechazadas": "50"
+  },
+  {
+    "numero": "107",
+    "tipo": "tipo1",
+    "capacidad" : "200",
+    "maletas" : "500",
+    "maletasBagCarts" : "500",
+    "rechazadas": "20"
+  },
+  {
+    "numero": "50",
+    "tipo": "tipo2",
+    "capacidad" : "400",
+    "maletas" : "200",
+    "maletasBagCarts" : "120",
+    "rechazadas": "0"
+  },
+  {
+    "numero": "399",
+    "tipo": "tipo3",
+    "capacidad" : "600",
+    "maletas" : "500",
+    "maletasBagCarts" : "500",
+    "rechazadas": "2"
+  }
+]

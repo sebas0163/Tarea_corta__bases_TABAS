@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../services/data.service';
-// json de ejemplo borra cuando ya sea conectado al api
+import jsPDF from 'jspdf';
 
 
 @Component({
@@ -9,6 +9,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
+  @ViewChild('content', {static: false}) el!: ElementRef;
   information: any;
 
   constructor(private data: DataService) {
@@ -16,6 +17,15 @@ export class ReportComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  downloadPDF(){
+    let pdf = new jsPDF('p','pt','a4');
+    pdf.html(this.el.nativeElement,{
+      callback: (pdf) => {
+        pdf.save("MaletasUsuarios.pdf");
+      }
+    })
   }
 
 

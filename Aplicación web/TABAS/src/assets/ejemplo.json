@@ -33,6 +33,24 @@
       "color": "azul"
     }
   ]
+  },
+  {
+    "nombre": "Maria",
+    "Cedula": "21544654654",
+    "maletas": [{
+      "peso": "20",
+      "costo": "30",
+      "numero": "870",
+      "color": "morado"
+
+    },
+    {
+      "peso": "89",
+      "costo": "50",
+      "numero": "100",
+      "color": "azul"
+    }
+  ]
   }
 
 ]

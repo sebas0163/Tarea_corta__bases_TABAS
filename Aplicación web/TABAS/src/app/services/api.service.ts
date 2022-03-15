@@ -41,4 +41,12 @@ export class ApiService {
     return this.http.get<string>(this.get_url, requestOptions);
 
   }
+  //get multivalor de las maletas por usuario
+  getMaletasUsuarios(){
+
+  }
+  // get multivalor conciliación maleta
+  getConciliation(){
+
+  }
 }

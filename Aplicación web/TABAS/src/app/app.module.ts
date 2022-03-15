@@ -14,6 +14,7 @@ import { BaggageComponent } from './baggage/baggage.component';
 import { NewBaggageComponent } from './new-baggage/new-baggage.component';
 import { WorkersComponent } from './workers/workers.component';
 import { ReportComponent } from './report/report.component';
+import { ConciliationComponent } from './report/conciliation/conciliation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReportComponent } from './report/report.component';
     AppComponent,
     TablaComponent,
     CarFormComponent,
-    ReportComponent
+    ReportComponent,
+    ConciliationComponent
   ],
   imports: [
     BrowserModule,

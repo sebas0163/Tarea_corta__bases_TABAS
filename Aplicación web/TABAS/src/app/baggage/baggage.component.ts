@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Suitcase } from '../classes/suitcase';
 import { DataService } from '../services/data.service';
 import listaUsuarios from 'src/assets/ejemplo.json';
+import Conciliacion from 'src/assets/ejemplo2.json';
 
 @Component({
   selector: 'app-baggage',
@@ -32,7 +33,7 @@ export class BaggageComponent implements OnInit {
   }
   // solicita conciliacion de maletas al API
   getBaggageConciliation(){
-    this.data.setJson(null);
+    this.data.setJson(Conciliacion);
   }
 
 }
