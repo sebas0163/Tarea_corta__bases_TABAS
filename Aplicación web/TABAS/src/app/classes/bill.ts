@@ -1,4 +1,5 @@
 export class Bill {
+
     clave: string;
     codigoActividad: string;
     numeroConsecutivo: string;
@@ -341,3 +342,4 @@ export class Bill {
 
     }
 }
+

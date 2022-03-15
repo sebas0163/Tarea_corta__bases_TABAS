@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { Suitcase } from '../classes/suitcase';
 import { DataService } from '../services/data.service';
 import { Bill } from '../classes/bill';
+//import './../../assets/smtp.js';
+//import "C:\Users\Steve\Projects\Bases de Datos\TABAS\Tarea_corta__bases_TABAS\Aplicación web\TABAS\src\assets\smtp.js"
+//import 'src\assets\smtp.js';
+declare let Email: any;
+//declare var Email: any;
 
 @Component({
   selector: 'app-baggage',
@@ -13,16 +18,42 @@ export class BaggageComponent implements OnInit {
 
   baggage: Suitcase[];
 
+  apiKey: any;
+
   constructor(private router: Router, private data: DataService) {
     this.baggage = this.data.baggage;
+    this.apiKey = "0BE5BE73D069FAD3B82D584BFC3861EBC451";
   }
-
 
 
   headers = ["Número de maleta", "Usuario", "Color", "Peso", "Costo de envío", "Vuelo"]
 
   ngOnInit(): void {
-    generateBill();
+
+    console.log("Sending email...");
+    this.sendEmail();
+
+  }
+
+  sendEmail() {
+    var dataUri = "data:" + "xml" + ";base64," + generateBill();
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "stevealv@hotmail.com",
+      Password: this.apiKey,
+      To: 'stevealv@gmail.com',
+      From: "stevealv@hotmail.com",
+      Subject: "Example attch",
+      Body: "Example",
+      Attachments: [
+        {
+          name: "e.xml",
+          data: dataUri
+        }]
+    }).then(
+      (message: any) => alert(message)
+    );
+    console.log("email sent");
   }
 
   addBaggage() {
@@ -87,7 +118,11 @@ function generateBill() {
   peopleElem.appendChild(personElem2);
   doc.appendChild(peopleElem);
 
-  console.log(bill.create());
+  var xmlSerializer = new XMLSerializer().serializeToString(bill.create());
+  var base64 = btoa(xmlSerializer);
+  //console.log(xmlSerializer);
+
+  return base64;
 
 }
 
