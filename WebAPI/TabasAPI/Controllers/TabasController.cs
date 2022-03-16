@@ -31,11 +31,16 @@ namespace TabasAPI.Controllers
         [HttpGet]
         public string GetReporte()
         {
-            using (StreamReader r = new StreamReader("DataBase/reportes.json"))
-            {
-            string json = r.ReadToEnd();
-            return json;
-            }
+             Newtonsoft.Json.Linq.JToken maletas = getReport("Maletas_Usuario");
+             return maletas.ToString();
+            
+        }
+        [Route("api/Reporte2")]
+        [HttpGet]
+        public string GetReporte2()
+        {
+             Newtonsoft.Json.Linq.JToken maletas = getReport("Conciliacion");
+             return maletas.ToString();
             
         }
 
@@ -109,6 +114,17 @@ namespace TabasAPI.Controllers
             
             
             return result.GetValue(entity);
+            }
+        }
+        public  Newtonsoft.Json.Linq.JToken getReport(string report)
+        {
+            using (StreamReader r = new StreamReader("DataBase/reportes.json"))
+            {
+            string json = r.ReadToEnd();
+            Newtonsoft.Json.Linq.JObject result = Newtonsoft.Json.Linq.JObject.Parse(json);
+            
+            
+            return result.GetValue(report);
             }
         }
         public dynamic getAtribute(string entity, string attribute)

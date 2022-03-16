@@ -5,6 +5,8 @@
       "nombre2": "Steve",
       "apellido1": "Alvarado",
       "apellido2": "Mendez",
+      "correo": "a@gmail.com",
+      "contrasena": "1234",
       "rol": "Embarcador",
       "cedula": 1
     },
@@ -13,24 +15,30 @@
       "nombre2": "Angeles",
       "apellido1": "Gonzalez",
       "apellido2": "Bermudez",
+      "correo": "b@gmail.com",
+      "contrasena": "1234",
       "rol": "Scan",
       "cedula": 2
     },
     {
-      "nombre1": "Cs",
-      "nombre2": "asd",
-      "apellido1": "asd",
-      "apellido2": "asfgsdfd",
-      "rol": "asd",
-      "cedula": 7
+      "nombre1": "Sebastian",
+      "nombre2": "Josue",
+      "apellido1": "Moya",
+      "apellido2": "Monge",
+      "correo": "c@gmail.com",
+      "contrasena": "1234",
+      "rol": "Scan",
+      "cedula": 3
     },
     {
-      "nombre1": "AAs",
-      "nombre2": "BABd",
-      "apellido1": "aasd",
-      "apellido2": "asfgsdfd",
-      "rol": "asd",
-      "cedula": 7
+      "nombre1": "Dennis",
+      "nombre2": "Alejandro",
+      "apellido1": "Jimenez",
+      "apellido2": "Campos",
+      "correo": "d@gmail.com",
+      "contrasena": "1234",
+      "rol": "Scan",
+      "cedula": 3
     }
   ],
   "Usuarios": [

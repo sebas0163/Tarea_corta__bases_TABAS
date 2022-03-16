@@ -1,4 +1,7 @@
-[{
+
+  {
+    "Maletas_Usuario":
+    [{
     "nombre": "Mariel",
     "Cedula": "102151",
     "maletas": [{
@@ -35,4 +38,32 @@
   ]
   }
 
+],
+"Conciliacion":
+[
+  {
+    "numero": "107",
+    "tipo": "tipo1",
+    "capacidad" : "200",
+    "maletas" : "500",
+    "maletasBagCarts" : "500",
+    "rechazadas": "20"
+  },
+  {
+    "numero": "108",
+    "tipo": "tipo5",
+    "capacidad" : "20",
+    "maletas" : "50",
+    "maletasBagCarts" : "50",
+    "rechazadas": "1"
+  },
+  {
+    "numero": "109",
+    "tipo": "tipo3",
+    "capacidad" : "700",
+    "maletas" : "400",
+    "maletasBagCarts" : "100",
+    "rechazadas": "10"
+  }
 ]
+}

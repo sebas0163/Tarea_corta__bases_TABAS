@@ -19,6 +19,8 @@ namespace TabasAPI.Models
         public string nombre2{get; set;}
         public string apellido1{get; set;}
         public string apellido2{get; set;}
+        public string correo{get; set;}
+        public string contrasena{get; set;}
         public string rol{get; set;}
         public int cedula{get; set;}
 
@@ -34,7 +36,7 @@ namespace TabasAPI.Models
 
     public class Usuario
     {
-        public string nombre1{get; set;}
+        public string nombre1 {get; set;}
         public string nombre2{get; set;}
         public string apellido1{get; set;}
         public string apellido2{get; set;}
