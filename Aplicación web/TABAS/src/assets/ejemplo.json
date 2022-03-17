@@ -1,0 +1,56 @@
+[{
+    "nombre": "Mariel",
+    "Cedula": "102151",
+    "maletas": [{
+      "peso": "69",
+      "costo": "100",
+      "numero": "600",
+      "color": "verde"
+
+    },
+    {
+      "peso": "20",
+      "costo": "40",
+      "numero": "680",
+      "color": "azul"
+    }
+  ]
+  },
+  {
+    "nombre": "Jaime",
+    "Cedula": "15415",
+    "maletas": [{
+      "peso": "78",
+      "costo": "90",
+      "numero": "780",
+      "color": "morado"
+
+    },
+    {
+      "peso": "36",
+      "costo": "50",
+      "numero": "580",
+      "color": "azul"
+    }
+  ]
+  },
+  {
+    "nombre": "Maria",
+    "Cedula": "21544654654",
+    "maletas": [{
+      "peso": "20",
+      "costo": "30",
+      "numero": "870",
+      "color": "morado"
+
+    },
+    {
+      "peso": "89",
+      "costo": "50",
+      "numero": "100",
+      "color": "azul"
+    }
+  ]
+  }
+
+]

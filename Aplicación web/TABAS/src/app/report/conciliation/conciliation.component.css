@@ -1,0 +1,15 @@
+#content {
+  width: 595px;
+  height: 842;
+}
+#titulo{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 33px;
+  font-weight: bold;
+}
+
+#Vuelo{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 25px;
+}

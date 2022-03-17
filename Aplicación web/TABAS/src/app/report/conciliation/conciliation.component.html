@@ -1,0 +1,31 @@
+<div id="content" #content>
+  <img src="assets/images/logo.png" >
+  <label id="titulo"#titulo from="title" style="margin-top: 0.5cm;">Conciliación de Maletas</label>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Número de Vuelo</th>
+        <th>Tipo de avión</th>
+        <th>Capacidad</th>
+        <th>Total de maletas</th>
+        <th>Maletas en bagCarts</th>
+        <th>Maletas rechazadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of information">
+        <td>{{item.numero}}</td>
+        <td>{{item.tipo}}</td>
+        <td>{{item.capacidad}}</td>
+        <td>{{item.maletas}}</td>
+        <td>{{item.maletasBagCarts}}</td>
+        <td>{{item.rechazadas}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-dark me-md-2" type="button" (click)="downloadPDF()">Guardar</button>
+  <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage">Regresar</button>
+</div>
