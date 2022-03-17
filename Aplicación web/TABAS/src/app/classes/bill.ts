@@ -1,3 +1,6 @@
+import { PdfMakeWrapper, Img, Txt, Table } from 'pdfmake-wrapper';
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
+
 export class Bill {
 
     clave: string;
@@ -127,7 +130,48 @@ export class Bill {
 
     }
 
-    public create() {
+    public async generatePDF() {
+
+        PdfMakeWrapper.setFonts(pdfFonts);
+
+        const pdf = new PdfMakeWrapper();
+
+        // pdf.images({
+        //     picture1: await new Img('https://drive.google.com/file/d/10YdYWGJTZNJnACkVGrfOeyVjzvRaIHlg/view?usp=sharing').build()
+        // });
+
+        pdf.add(new Txt('TABAS').bold().end);
+        pdf.add("");
+        pdf.add("");
+        pdf.add("");
+        pdf.add(new Table([
+            ['column 1', 'column 2'],
+            ['column 1', 'column 2']
+        ]).end);
+        pdf.add("");
+        pdf.add("");
+        pdf.add("");
+        pdf.add(new Table([
+            ['column 1', 'column 2'],
+            ['column 1', 'column 2']
+        ]).end);
+
+        //pdf.create().open();
+
+        var data: any;
+
+        pdf.create().getBase64(function (encodedString: any) {
+            data = encodedString;
+        }
+        );
+
+        //pdf.create().getBase64((encodedString) => (data = encodedString));
+
+        return data;
+
+    }
+
+    public createXML() {
 
         var doc = document.implementation.createDocument("", "", null);
 
