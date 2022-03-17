@@ -1,3 +1,4 @@
+<!--Tabla contenedora de bagcarts--->
 <div id="content" #content>
   <img src="assets/images/logo.png" >
   <label id="titulo"#titulo from="title" style="margin-top: 0.5cm;">Conciliación de Maletas</label>
@@ -14,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of information">
+      <tr *ngFor="let item of information"> <!--Por cada vuelo va agregado los siguiente datos a la tabla--->
         <td>{{item.numero}}</td>
         <td>{{item.tipo}}</td>
         <td>{{item.capacidad}}</td>
@@ -25,7 +26,7 @@
     </tbody>
   </table>
 </div>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"> <!--Botones con opciones para descargar el reporte en formato pdf--->
   <button class="btn btn-dark me-md-2" type="button" (click)="downloadPDF()">Guardar</button>
-  <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage">Regresar</button>
+  <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage" (click)="restaurarJson()">Regresar</button>
 </div>

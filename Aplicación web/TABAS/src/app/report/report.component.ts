@@ -8,6 +8,9 @@ import jsPDF from 'jspdf';
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css']
 })
+/**
+ * Clase controladoras del componente reporte
+ */
 export class ReportComponent implements OnInit {
   @ViewChild('content', {static: false}) el!: ElementRef;
   information: any;
@@ -18,7 +21,15 @@ export class ReportComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  /**
+   * Funcion encargada de eliminar la informacion del reporte una vez el componente sea cerrado
+   */
+  restaurarJson(){
+    this.data.information = null;
+  }
+  /**
+   * Funcion encargada de tomar el reporte y convertirlo en documento pdf
+   */
   downloadPDF(){
     let pdf = new jsPDF('p','pt','a4');
     pdf.html(this.el.nativeElement,{

@@ -88,3 +88,33 @@ E:\Tarea1\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\refint\Tabas
 E:\Tarea1\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.pdb
 E:\Tarea1\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.genruntimeconfig.cache
 E:\Tarea1\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\ref\TabasAPI.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\appsettings.Development.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\appsettings.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\DataBase\datos.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\DataBase\reportes.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\TabasAPI.exe
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\TabasAPI.deps.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\TabasAPI.runtimeconfig.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\TabasAPI.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\TabasAPI.pdb
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.csproj.AssemblyReference.cache
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.AssemblyInfoInputs.cache
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.AssemblyInfo.cs
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.csproj.CoreCompileInputs.cache
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\staticwebassets.build.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\staticwebassets.development.json
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\scopedcss\bundle\TabasAPI.styles.css
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.csproj.CopyComplete
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\refint\TabasAPI.dll
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.pdb
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\TabasAPI.genruntimeconfig.cache
+c:\Users\sebas\Desktop\TEC\Semestre 1 2022\Bases de datos\Tarea_corta__bases_TABAS\WebAPI\TabasAPI\obj\Debug\net6.0\ref\TabasAPI.dll

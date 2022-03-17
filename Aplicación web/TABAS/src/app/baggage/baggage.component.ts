@@ -4,6 +4,7 @@ import { Suitcase } from '../classes/suitcase';
 import { DataService } from '../services/data.service';
 import listaUsuarios from 'src/assets/ejemplo.json';
 import Conciliacion from 'src/assets/ejemplo2.json';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-baggage',
@@ -13,7 +14,7 @@ import Conciliacion from 'src/assets/ejemplo2.json';
 export class BaggageComponent implements OnInit {
   baggage: Suitcase[];
 
-  constructor(private router: Router, private data: DataService) {
+  constructor(private router: Router, private data: DataService, private api:ApiService) {
     this.baggage = this.data.baggage;
   }
 
@@ -24,16 +25,38 @@ export class BaggageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   addBaggage() {
     this.router.navigate(['new-baggage']);
   }
-  // Solicita informacion de maletas por usuario al API
+  /* Función que solicita la informacion de maletas por cliente al API
+     Retorno: void
+     Creada por Sebastian
+  */
   getUserBaggage(){
-    this.data.setJson(listaUsuarios);
+    //this.data.setJson(listaUsuarios);
+    this.api.getMaletasUsuarios().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.data.setJson(result);
+      console.log(result);
+    })
   }
-  // solicita conciliacion de maletas al API
+  /* Función que solicita la Conciliacion de maletas al API
+     Retorno: void
+     Creada por Sebastian
+  */
   getBaggageConciliation(){
-    this.data.setJson(Conciliacion);
+    //this.data.setJson(Conciliacion);
+    this.api.getConciliation().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.data.setJson(result);
+      console.log(result);
+    })
   }
 
 }

@@ -7,17 +7,28 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './conciliation.component.html',
   styleUrls: ['./conciliation.component.css']
 })
+/**
+ * Clase controladora del componente conciliacion
+ */
 export class ConciliationComponent implements OnInit {
   @ViewChild('content',{static:false}) el !: ElementRef;
 
-  information: any;
+  information: any; // variable encargada de guardar la información del json entregado por el API
   constructor(private data:DataService) {
     this.information = this.data.information;
    }
 
   ngOnInit(): void {
   }
-
+  /**
+   * Funcion que se encarga de eliminar los elementos del Json al cerrar el reporte
+   */
+  restaurarJson(){
+    this.data.information = null;
+  }
+  /**
+   * Funcion encargada de tomar los elementos del reporte en la pagina web y transformarlos en un pdf
+   */
   downloadPDF(){
     let pdf = new jsPDF('p','pt','a4');
     pdf.html(this.el.nativeElement,{

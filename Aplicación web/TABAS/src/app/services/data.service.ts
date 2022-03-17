@@ -17,7 +17,10 @@ export class DataService {
   add(suitcase: Suitcase) {
     this.baggage.push(suitcase);
   }
-  // Añade el objeto tipo json la variable
+  /**
+   * Funcion que define el json para ser leido en el reporte
+   * @param dato documento json
+   */
   setJson(dato:any){
     this.information = dato;
   }
