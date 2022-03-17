@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.t1mobileapp.interfaces.MaletaAPI;
 import com.example.t1mobileapp.models.Maleta;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     TextView result3;
     TextView result4;
     TextInputEditText bagid;
+    Spinner flight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         button2 =findViewById(R.id.button2);
+
+        flight = findViewById(R.id.flight);
+
+        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this, R.array.flights, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        flight.setAdapter(adapter);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
