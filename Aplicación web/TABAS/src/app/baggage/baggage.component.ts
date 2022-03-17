@@ -21,10 +21,12 @@ export class BaggageComponent implements OnInit {
 
   pdf = new PdfMakeWrapper();
 
-  bill = new Bill("e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
-    "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
-    "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
-    "e", "e", "e", "e", "e", "e", "e", "e", "e");
+  bill = new Bill("5060811190031015174806050001004000045768819312620",
+    "921204", "60500010040000457684", "2022-2-08T16:39:27-06:00", "Tec Airlines S.A",
+    "02", "3101517440", "AEROLINEA TEC CARTAGO", "3", "03",
+    "01", "JOSE RAMIREZ", "01", "117740492", "JOSERAM@GMAIL.COM", "01", "01", "1", "01", "105", "1",
+    "Unid", "MALETA", "MALETA", "20566.37", "20566.37", "20566.37", "01", "08", "13", "333.63", "333.63",
+    "20900", "CRC", "1", "20566.37", "20566.37", "20566.37", "20566.37", "333.63", "20900");
 
   constructor(private router: Router, private data: DataService) {
     this.baggage = this.data.baggage;
@@ -92,7 +94,6 @@ export class BaggageComponent implements OnInit {
    */
   formatPDF() {
 
-    var logo = new Txt('TABAS').alignment('center').bold().fontSize(22).end;
     var title = new Txt('Tiquete electrónico').alignment('left').bold().fontSize(18).end;
     var clave = new Txt("Clave").alignment('left').bold().fontSize(12).end;
     var nCons = new Txt("Número consecutivo").alignment('left').bold().fontSize(12).end;
@@ -108,11 +109,11 @@ export class BaggageComponent implements OnInit {
     this.pdf.add(title);
     this.pdf.add("\n");
     this.pdf.add("\n");
-    this.pdf.add(new Columns([clave, 'world']).columnGap(1).end);
-    this.pdf.add(new Columns([nCons, 'world']).columnGap(1).end);
-    this.pdf.add(new Columns([fechaEmi, 'world']).columnGap(1).end);
-    this.pdf.add(new Columns([codigoAct, 'world']).columnGap(1).end);
-    this.pdf.add(new Columns([CondicionVenta, 'world']).columnGap(1).end);
+    this.pdf.add(new Columns([clave, this.bill.clave]).columnGap(1).end);
+    this.pdf.add(new Columns([nCons, this.bill.numeroConsecutivo]).columnGap(1).end);
+    this.pdf.add(new Columns([fechaEmi, this.bill.fechaEmision]).columnGap(1).end);
+    this.pdf.add(new Columns([codigoAct, this.bill.codigoActividad]).columnGap(1).end);
+    this.pdf.add(new Columns([CondicionVenta, 'Contado']).columnGap(1).end);
     this.pdf.add("\n");
     this.pdf.add("\n");
     this.pdf.add(medioPago);
@@ -137,15 +138,15 @@ export class BaggageComponent implements OnInit {
     new Txt('Receptor').alignment('left').bold().fontSize(14).end]).columnGap(1).end);
     this.pdf.add("\n");
     this.pdf.add(new Columns([
-      new Txt("Razón social").alignment('left').bold().fontSize(12).end, "world SA",
-      new Txt("Razón social").alignment('left').bold().fontSize(12).end, "world SA"]).columnGap(1).end);
+      new Txt("Razón social").alignment('left').bold().fontSize(12).end, this.bill.nombre,
+      new Txt("Razón social").alignment('left').bold().fontSize(12).end, this.bill.usuario]).columnGap(1).end);
     this.pdf.add(new Columns([
       new Txt("Nombre comercial").alignment('left').bold().fontSize(12).end,
-      "WORLD SA", " ", " "]).columnGap(1).end);
+      this.bill.nombreComercial, " ", " "]).columnGap(1).end);
     this.pdf.add(new Columns([
-      new Txt("Número").alignment('left').bold().fontSize(12).end, "111",
+      new Txt("Número").alignment('left').bold().fontSize(12).end, this.bill.idNumero,
 
-      new Txt("Número").alignment('left').bold().fontSize(12).end, "111"
+      new Txt("Número").alignment('left').bold().fontSize(12).end, this.bill.idRNumero
     ]).columnGap(1).end);
     this.pdf.add(new Columns([
       new Txt("Tipo").alignment('left').bold().fontSize(12).end, "Cédula Jurídica",
