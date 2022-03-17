@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">T1mobileapp</string>
+    <string-array name="flights">
+        <item>CR-LA 2:00AM</item>
+        <item>CR-NY 3:50PM</item>
+        <item>CR-TX 12:00MD</item>
+    </string-array>
 </resources>

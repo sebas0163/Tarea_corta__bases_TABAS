@@ -22,16 +22,67 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Inserte El ID de la maleta"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="105dp" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="388dp"
         android:layout_marginEnd="108dp"
         android:text="Asignar a Bagcart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bagid" />
+
+    <TextView
+        android:id="@+id/result2"
+        android:layout_width="196dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/result1"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/result3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bagid" />
+
+    <TextView
+        android:id="@+id/result3"
+        android:layout_width="201dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/result4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/result4"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/result2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/flight"
+        android:layout_width="334dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
