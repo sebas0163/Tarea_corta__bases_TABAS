@@ -1,6 +1,9 @@
 import { PdfMakeWrapper, Img, Txt, Table } from 'pdfmake-wrapper';
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 
+/**
+ * Bill: Representa a la Factura electronica.
+ */
 export class Bill {
 
     clave: string;
@@ -129,53 +132,16 @@ export class Bill {
         this.totalComprobante = totalComprobante;
 
     }
-
-    public async generatePDF() {
-
-        PdfMakeWrapper.setFonts(pdfFonts);
-
-        const pdf = new PdfMakeWrapper();
-
-        // pdf.images({
-        //     picture1: await new Img('https://drive.google.com/file/d/10YdYWGJTZNJnACkVGrfOeyVjzvRaIHlg/view?usp=sharing').build()
-        // });
-
-        pdf.add(new Txt('TABAS').bold().end);
-        pdf.add("");
-        pdf.add("");
-        pdf.add("");
-        pdf.add(new Table([
-            ['column 1', 'column 2'],
-            ['column 1', 'column 2']
-        ]).end);
-        pdf.add("");
-        pdf.add("");
-        pdf.add("");
-        pdf.add(new Table([
-            ['column 1', 'column 2'],
-            ['column 1', 'column 2']
-        ]).end);
-
-        //pdf.create().open();
-
-        var data: any;
-
-        pdf.create().getBase64(function (encodedString: any) {
-            data = encodedString;
-        }
-        );
-
-        //pdf.create().getBase64((encodedString) => (data = encodedString));
-
-        return data;
-
-    }
-
+    /**
+     * createXML: Crea el documento xml que sera enviado a hacienda.
+     * @returns XMLDocument
+     */
     public createXML() {
 
         var doc = document.implementation.createDocument("", "", null);
 
-        var xml = doc.createElement("xml");
+        var xml = doc.createElement("TiqueteElectronico");
+        xml.setAttribute("xmlns", "https://cdn.comprobanteselectronicos.go.cr/xml-schemas/v4.3/tiqueteElectronico");
 
         var claveElem = doc.createElement("Clave");
         claveElem.innerHTML = this.clave;
@@ -214,6 +180,11 @@ export class Bill {
         return doc;
 
     }
+    /**
+     * appendResumen: Adjunta el apartado Resumen al documento XML.
+     * @param xml XMLDocument.
+     * @param doc Root del documento XML.
+     */
     appendResumen(xml: any, doc: any) {
 
         var resumenElem = xml.createElement("ResumenFactura");
@@ -253,6 +224,11 @@ export class Bill {
 
         doc.appendChild(resumenElem);
     }
+    /**
+     * appendDetalleServicio: Adjunta el apartado DetalleServicio al documento XML.
+     * @param xml XMLDocument.
+     * @param doc Root del documento XML.
+     */
     appendDetalleServicio(xml: any, doc: any) {
 
         var detalleSerElem = xml.createElement("DetalleServicio");
@@ -317,6 +293,12 @@ export class Bill {
 
         doc.appendChild(detalleSerElem);
     }
+
+    /**
+     * appendReceptor: Adjunta el apartado Receptor al documento XML.
+     * @param xml XMLDocument.
+     * @param doc Root del documento XML.
+     */
     appendReceptor(xml: any, doc: any) {
 
         var receptorElem = xml.createElement("Receptor");
@@ -342,6 +324,11 @@ export class Bill {
 
     }
 
+    /**
+     * appendEmisor: Adjunta el apartado Emisor al documento XML.
+     * @param xml XMLDocument.
+     * @param doc Root del documento XML.
+     */
     appendEmisor(xml: any, doc: any) {
 
         var emisorElem = xml.createElement("Emisor");

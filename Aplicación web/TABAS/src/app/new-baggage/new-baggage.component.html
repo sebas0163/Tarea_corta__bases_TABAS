@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+    <form [formGroup]="newForm">
         <div class="form-group">
             <label for="exampleFormControlInput1">Número de maleta</label>
             <input type="text" class="form-control" formControlName="id">
@@ -32,8 +32,8 @@
         <br>
         <div class="relative">
             <button type="submit" class="btn btn-primary" style="margin-right: 10px;"
-                (click)="addBaggage()">Save</button>
-            <button type="button" class="btn btn-dark" (click)="leave()" style="margin-right: 10px;">Leave</button>
+                (click)="addBaggage()">Guardar</button>
+            <button type="button" class="btn btn-danger" (click)="leave()" style="margin-right: 10px;">Cancelar</button>
         </div>
 
     </form>

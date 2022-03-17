@@ -21,6 +21,11 @@ export class BaggageComponent implements OnInit {
 
   pdf = new PdfMakeWrapper();
 
+  bill = new Bill("e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
+    "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
+    "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
+    "e", "e", "e", "e", "e", "e", "e", "e", "e");
+
   constructor(private router: Router, private data: DataService) {
     this.baggage = this.data.baggage;
     this.apiKey = "0BE5BE73D069FAD3B82D584BFC3861EBC451";
@@ -31,19 +36,15 @@ export class BaggageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //let bill = generateBill();
-    // console.log("Sending email...");
-    //this.sendEmail();
-    // console.log("base64 pdf:");
-    // console.log(formatPDF());
-
-    // console.log("Opening pdf..");
-    // bill.generatePDF();
-
   }
 
+  /**
+   * sendEmail: Se encarga de enviar la factura electronica al correo electronico del usuario.
+   * Le envia dos archivos adjuntos. Un archivo .pdf y otro .xml. El .xml es tambien enviado a hacienda con su
+   * respectivo formato.
+   */
   async sendEmail() {
-    var dataUri = "data:" + "xml" + ";base64," + xmlTobase64();
+    var dataUri = "data:" + "xml" + ";base64," + this.xmlTobase64();
 
     this.pdf.add(await new Img('../../assets/logo.png').build());
     this.formatPDF();
@@ -74,14 +75,23 @@ export class BaggageComponent implements OnInit {
     //   console.log("email sent");
     // }
     // );
+
+    alert("Factura enviada a Hacienda. Y copia enviada al cliente.");
   }
 
+  /**
+   * addBaggage: Redirige hacia la pagina para agregar una maleta.
+   * En esta pagina se le solicita todo lo necesario para agregar la maleta.
+   */
   addBaggage() {
     this.router.navigate(['new-baggage']);
   }
 
+  /**
+   * formatPDF: Da formato al pdf de la factura, que luego es enviada al cliente.
+   */
   formatPDF() {
-    var bill = generateBill();
+
     var logo = new Txt('TABAS').alignment('center').bold().fontSize(22).end;
     var title = new Txt('Tiquete electrónico').alignment('left').bold().fontSize(18).end;
     var clave = new Txt("Clave").alignment('left').bold().fontSize(12).end;
@@ -254,23 +264,18 @@ export class BaggageComponent implements OnInit {
       "20,900.00"]).alignment("right").columnGap(1).end);
   }
 
+  /**
+   * xmlTobase64: Convierte un XMLDocument a base 64.
+   * @returns documento xml en base 64.
+   */
+  xmlTobase64() {
+
+    var xmlSerializer = new XMLSerializer().serializeToString(this.bill.createXML());
+    var base64 = btoa(xmlSerializer);
+
+    return base64;
+  }
+
 }
-function generateBill() {
 
-  let e = "e";
-  let bill = new Bill(e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e,
-    e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e, e);
-
-  return bill;
-
-}
-
-function xmlTobase64() {
-
-  var bill = generateBill();
-  var xmlSerializer = new XMLSerializer().serializeToString(bill.createXML());
-  var base64 = btoa(xmlSerializer);
-
-  return base64;
-}
 

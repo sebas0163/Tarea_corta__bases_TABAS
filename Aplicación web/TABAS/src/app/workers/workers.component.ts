@@ -10,13 +10,26 @@ import { ApiService } from '../services/api.service';
 })
 export class WorkersComponent implements OnInit {
 
-  headers = ["Nombre", "Apellidos", "Cédula", "Rol"];
+  headers = ["Nombre", "Apellidos", "Cédula", "Rol", "Nombre de usuario", "Correo electrónico"];
   workers: WorkerI[] = [];
 
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
+    this.showWorkers();
+  }
 
+  /**
+   * addWorker: Redirecciona hacia la pagina para registrar a un trabajador.
+   */
+  addWorker() {
+    this.router.navigate(['worker-registration']);
+  }
+
+  /**
+   * showWorkers: Obtiene los trabajadores registrados en la base de datos, y los muestra en pantalla.
+   */
+  showWorkers() {
     this.api.getWorkers().subscribe((data: any) => {
       var a = data;
       a = a.replace(/'/g, '"');
@@ -24,11 +37,5 @@ export class WorkersComponent implements OnInit {
       this.workers = result;
       console.log(result);
     })
-
-
-  }
-
-  addWorker() {
-    this.router.navigate(['worker-registration']);
   }
 }
