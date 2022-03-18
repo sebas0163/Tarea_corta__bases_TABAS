@@ -29,12 +29,6 @@ export class ConciliationComponent implements OnInit {
     })
   }
   /**
-   * Funcion que se encarga de eliminar los elementos del Json al cerrar el reporte
-   */
-  restaurarJson(){
-    this.data.conciliacion = [];
-  }
-  /**
    * Funcion encargada de tomar los elementos del reporte en la pagina web y transformarlos en un pdf
    */
   downloadPDF(){

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suitcase } from '../classes/suitcase';
 import { DataService } from '../services/data.service';
-import listaUsuarios from 'src/assets/ejemplo.json';
-import Conciliacion from 'src/assets/ejemplo2.json';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -30,33 +28,6 @@ export class BaggageComponent implements OnInit {
   addBaggage() {
     this.router.navigate(['new-baggage']);
   }
-  /* Función que solicita la informacion de maletas por cliente al API
-     Retorno: void
-     Creada por Sebastian
-  */
-  getUserBaggage(){
-    //this.data.setJson(listaUsuarios);
-    this.api.getMaletasUsuarios().subscribe((data: any) => {
-      var a = data;
-      a = a.replace(/'/g, '"');
-      var result = JSON.parse(a);
-      this.data.setJson(result);
-      console.log(result);
-    })
-  }
-  /* Función que solicita la Conciliacion de maletas al API
-     Retorno: void
-     Creada por Sebastian
-  */
-  getBaggageConciliation(){
-    //this.data.setJsonConci(Conciliacion);
-    this.api.getConciliation().subscribe((data: any) => {
-      var a = data;
-      a = a.replace(/'/g, '"');
-      var result = JSON.parse(a);
-      this.data.setJsonConci(result);
-      console.log(result);
-    })
-  }
+
 
 }
