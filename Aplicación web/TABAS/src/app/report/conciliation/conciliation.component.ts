@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild,ElementRef } from '@angular/core';
 import jsPDF from 'jspdf';
+import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -14,11 +15,18 @@ export class ConciliationComponent implements OnInit {
   @ViewChild('content',{static:false}) el !: ElementRef;
 
   information: any; // variable encargada de guardar la información del json entregado por el API
-  constructor(private data:DataService) {
+  constructor(private data:DataService, private api: ApiService) {
     this.information = this.data.conciliacion;
    }
 
   ngOnInit(): void {
+    this.api.getConciliation().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.information =result;
+      console.log(result);
+    })
   }
   /**
    * Funcion que se encarga de eliminar los elementos del Json al cerrar el reporte

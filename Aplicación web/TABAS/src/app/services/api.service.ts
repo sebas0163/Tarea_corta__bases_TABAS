@@ -11,9 +11,9 @@ import { WorkerI } from '../models/worker.interface';
 export class ApiService {
 
   post_url: string = "https://localhost:44396/api/post";
-  get_url: string = "https://localhost:7101/api/trabajadores";
-  get_reporteMal: string = "https://localhost:7101/api/Reporte";
-  get_Conciliacion: string = "https://localhost:7101/api/Reporte2";
+  get_url: string = "https://localhost:44396/api/trabajadores";
+  get_reporteMal: string = "https://localhost:44396/api/Reporte";
+  get_Conciliacion: string = "https://localhost:44396/api/Reporte2";
   constructor(private http: HttpClient) { }
 
   loginByEmail(form: LoginI): Observable<ResponseI> {

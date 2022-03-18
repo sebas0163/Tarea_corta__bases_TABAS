@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../services/data.service';
 import jsPDF from 'jspdf';
+import { ApiService } from '../services/api.service';
 
 
 @Component({
@@ -15,11 +16,18 @@ export class ReportComponent implements OnInit {
   @ViewChild('content', {static: false}) el!: ElementRef;
   information: any;
 
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private api:ApiService) {
     this.information = this.data.information;
    }
 
   ngOnInit(): void {
+    this.api.getMaletasUsuarios().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.information = result;
+      console.log(result);
+    })
   }
   /**
    * Funcion encargada de eliminar la informacion del reporte una vez el componente sea cerrado
