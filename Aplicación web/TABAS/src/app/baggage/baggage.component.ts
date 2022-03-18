@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suitcase } from '../classes/suitcase';
 import { DataService } from '../services/data.service';
-import listaUsuarios from 'src/assets/ejemplo.json';
-import Conciliacion from 'src/assets/ejemplo2.json';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-baggage',
@@ -13,7 +12,7 @@ import Conciliacion from 'src/assets/ejemplo2.json';
 export class BaggageComponent implements OnInit {
   baggage: Suitcase[];
 
-  constructor(private router: Router, private data: DataService) {
+  constructor(private router: Router, private data: DataService, private api:ApiService) {
     this.baggage = this.data.baggage;
   }
 
@@ -24,16 +23,11 @@ export class BaggageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   addBaggage() {
     this.router.navigate(['new-baggage']);
   }
-  // Solicita informacion de maletas por usuario al API
-  getUserBaggage(){
-    this.data.setJson(listaUsuarios);
-  }
-  // solicita conciliacion de maletas al API
-  getBaggageConciliation(){
-    this.data.setJson(Conciliacion);
-  }
+
 
 }

@@ -245,19 +245,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DJiménez\\.nuget\\packages\\": {}
+    "C:\\Users\\sebas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tarea1\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\TabasAPI.csproj",
+      "projectUniqueName": "c:\\Users\\sebas\\Desktop\\TEC\\Semestre 1 2022\\Bases de datos\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\TabasAPI.csproj",
       "projectName": "TabasAPI",
-      "projectPath": "E:\\Tarea1\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\TabasAPI.csproj",
-      "packagesPath": "C:\\Users\\DJiménez\\.nuget\\packages\\",
-      "outputPath": "E:\\Tarea1\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\obj\\",
+      "projectPath": "c:\\Users\\sebas\\Desktop\\TEC\\Semestre 1 2022\\Bases de datos\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\TabasAPI.csproj",
+      "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\sebas\\Desktop\\TEC\\Semestre 1 2022\\Bases de datos\\Tarea_corta__bases_TABAS\\WebAPI\\TabasAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DJiménez\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

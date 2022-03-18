@@ -6,14 +6,14 @@ import { CarFormComponent } from '../car-form/car-form.component';
   templateUrl: './tabla.component.html',
   styleUrls: ['./tabla.component.css']
 })
+/**
+ * Clase controladora de la tabla de bagcarts
+ */
 export class TablaComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-  handleModalCarFormClose() {
-    //alert("se ha cerrado el modal")
   }
 
 }

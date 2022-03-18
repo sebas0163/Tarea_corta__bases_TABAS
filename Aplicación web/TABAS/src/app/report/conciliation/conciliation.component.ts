@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild,ElementRef } from '@angular/core';
 import jsPDF from 'jspdf';
+import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,17 +8,35 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './conciliation.component.html',
   styleUrls: ['./conciliation.component.css']
 })
+/**
+ * Clase controladora del componente conciliacion
+ */
 export class ConciliationComponent implements OnInit {
   @ViewChild('content',{static:false}) el !: ElementRef;
 
-  information: any;
-  constructor(private data:DataService) {
-    this.information = this.data.information;
+  information: any; // variable encargada de guardar la información del json entregado por el API
+  constructor(private data:DataService, private api: ApiService) {
+    this.information = this.data.conciliacion;
    }
 
   ngOnInit(): void {
+    this.solicitarInformacion();
   }
-
+  /**
+   * Función que solicita al API un json de las maletas por Usuario
+   */
+  solicitarInformacion(){
+    this.api.getConciliation().subscribe((data: any) => {
+      var a = data;
+      a = a.replace(/'/g, '"');
+      var result = JSON.parse(a);
+      this.information =result;
+      console.log(result);
+    })
+  }
+  /**
+   * Funcion encargada de tomar los elementos del reporte en la pagina web y transformarlos en un pdf
+   */
   downloadPDF(){
     let pdf = new jsPDF('p','pt','a4');
     pdf.html(this.el.nativeElement,{

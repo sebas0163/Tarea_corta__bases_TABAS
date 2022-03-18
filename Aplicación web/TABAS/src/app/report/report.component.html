@@ -1,8 +1,8 @@
-<div id="content" #content>
+<div id="content" #content><!--Tabla con las maletas por usuario--->
   <img src="assets/images/logo.png" >
   <label id="titulo"#titulo from="ejemplo" style="margin-top: 0.5cm;">Maletas por Usuario</label>
   <div *ngIf="information">
-    <div *ngFor="let item of information">
+    <div *ngFor="let item of information"><!--Comando que genera una tabla de maletas por cada usuario--->
       <label id="nombre"#nombre from="nombre" style="margin-top: 0.5cm;">Nombre: {{item.nombre}}</label>
       <label id="cedula"#cedula from="cedula" style="margin-top: 0.5cm; margin-left: 1cm;">Cédula: {{item.Cedula}}</label>
       <table class="table">
@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let maleta of item.maletas">
+          <tr *ngFor="let maleta of item.maletas"> <!--Comando que añade cada maleta del usuario a la tabla--->
           <td>{{maleta.numero}}</td>
           <td>{{maleta.costo}}</td>
           <td>{{maleta.peso}}</td>
@@ -28,7 +28,7 @@
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <button class="btn btn-dark me-md-2" type="button" (click)="downloadPDF()">Guardar</button>
-  <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage">Regresar</button>
+  <button class="btn btn-dark me-md-2" type="button" routerLink="/baggage" >Regresar</button>
 </div>
 
 
