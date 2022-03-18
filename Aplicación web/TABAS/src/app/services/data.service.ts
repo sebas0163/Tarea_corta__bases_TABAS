@@ -6,6 +6,10 @@ import { vuelo } from '../models/vuelo.interface';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Servicio utilizado para compartir la data almacenada.
+ */
 export class DataService {
 
   public baggage: Suitcase[];
@@ -18,6 +22,10 @@ export class DataService {
     this.conciliacion =[];
   }
 
+  /**
+   * add: Agrega la nueva maleta al registro de maletas.
+   * @param suitcase Maleta.
+   */
   add(suitcase: Suitcase) {
     this.baggage.push(suitcase);
   }

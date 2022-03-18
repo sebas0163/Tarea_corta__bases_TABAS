@@ -1,3 +1,6 @@
+/**
+ * Suitcase: Representa a la maleta que va a ser registrada por el cliente.
+ */
 export class Suitcase {
 
     id: number;

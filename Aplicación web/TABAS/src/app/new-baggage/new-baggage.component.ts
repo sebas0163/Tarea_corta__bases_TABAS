@@ -27,10 +27,9 @@ export class NewBaggageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  postForm(form: Suitcase) {
-
-  }
-
+  /**
+   * addBaggage: Agrega la maleta al registro con toda la informacion necesaria.
+   */
   addBaggage() {
     let fid = this.newForm.get('id')?.value;
     let fuser = this.newForm.get('user')?.value;
@@ -53,6 +52,10 @@ export class NewBaggageComponent implements OnInit {
     this.leave();
   }
 
+  /**
+   * Cancela el registro de la maleta, por lo que abandona la pagina actual.
+   * Lo redirecciona a la pagina de Equipaje.
+   */
   leave() {
     this.router.navigate(['baggage']);
   }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ApiService } from '../services/api.service';
-import { LoginI } from '../models/login.interface';
 import { User } from '../classes/user';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
@@ -20,33 +19,38 @@ export class LoginComponent implements OnInit {
 
   masterUser = new User(
     "master",
-    "master123"
+    "master123",
+    "master@tabas.com"
   );
 
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
   }
 
-  onLogin(form: LoginI) {
-    // this.api.loginByEmail(form).subscribe(data => {
-    //   console.log(data)
-    // })
-
-
-  }
-
+  /**
+   * login: Verifica que los credenciales sean validos, para luego iniciar sesion a la pagina.
+   */
   login() {
     let fusername = this.loginForm.get('username')?.value;
     let fpassword = this.loginForm.get('password')?.value;
     console.log(fusername);
     console.log(fpassword);
-    if (fusername == this.masterUser.username &&
+    if ((fusername == this.masterUser.username || fusername == this.masterUser.email) &&
       this.masterUser.password == fpassword) {
+      this.changeNavBar();
       this.router.navigate(['baggage']);
     } else {
-      console.log("Datos incorrectos")
+      console.log("Datos incorrectos");
+      alert("Los credenciales no concuerdan con nuestra base de datos.");
     }
+  }
+  /**
+   * changeNavBar: Cambia la vista de la barra de navegacion.
+   */
+  changeNavBar() {
+
+    this.app.registerView = 'regView2';
   }
 
 }
