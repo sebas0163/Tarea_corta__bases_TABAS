@@ -38,19 +38,21 @@ export class LoginComponent implements OnInit {
     console.log(fpassword);
     if ((fusername == this.masterUser.username || fusername == this.masterUser.email) &&
       this.masterUser.password == fpassword) {
-      this.changeNavBar();
+      this.changeNavBar('regView2');
       this.router.navigate(['baggage']);
     } else {
       console.log("Datos incorrectos");
       alert("Los credenciales no concuerdan con nuestra base de datos.");
     }
   }
+
   /**
    * changeNavBar: Cambia la vista de la barra de navegacion.
+   * @param view navbar.
    */
-  changeNavBar() {
+  changeNavBar(view: any) {
 
-    this.app.registerView = 'regView2';
+    this.app.registerView = view;
   }
 
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WorkerI } from '../models/worker.interface';
 import { ApiService } from '../services/api.service';
+import { ActivatedRoute } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-workers',
@@ -13,13 +15,16 @@ export class WorkersComponent implements OnInit {
   headers = ["Nombre", "Apellidos", "Cédula", "Rol", "Correo electrónico"];
   workers: WorkerI[] = [];
 
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(private router: Router, private api: ApiService, private route: ActivatedRoute, private app: AppComponent) {
+    route.params.subscribe(val => {
+
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.showWorkers();
+    });
+    this.app.registerView = 'regView2';
+  }
 
   ngOnInit(): void {
-    this.router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    };
-    this.showWorkers();
   }
 
   /**
