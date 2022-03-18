@@ -1,13 +1,16 @@
 package com.example.t1mobileapp.models;
-
-public class Maleta {
+/*
+* Clase maleta, encargada de declarar los diferentes elementos que se obtienen del api
+* En MainActivity se utilizara un convertidor de Json a string para evitar errores de compatibilidad
+* */
+public class Maleta { //Declaracion de atributos
     private String peso;
     private String costo;
     private String numero;
     private String color;
     private String estado;
 
-    public String getPeso() {
+    public String getPeso() {//Setters y Getters generados para cada atributo
         return peso;
     }
 
