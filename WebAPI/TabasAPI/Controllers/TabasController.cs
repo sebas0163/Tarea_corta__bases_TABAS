@@ -156,9 +156,10 @@ namespace TabasAPI.Controllers
             string json = r.ReadToEnd();
             Newtonsoft.Json.Linq.JObject result = Newtonsoft.Json.Linq.JObject.Parse(json);
             
-            
+            r.Close();
             return result.GetValue(entity);
             }
+            
         }
 
         /**
@@ -173,7 +174,7 @@ namespace TabasAPI.Controllers
             string json = r.ReadToEnd();
             Newtonsoft.Json.Linq.JObject result = Newtonsoft.Json.Linq.JObject.Parse(json);
             
-            
+            r.Close();
             return result.GetValue(report);
             }
         }
