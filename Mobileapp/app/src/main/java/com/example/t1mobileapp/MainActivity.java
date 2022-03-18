@@ -22,10 +22,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { //Se declara la clase main activity, encargada de manejar la funcionalidad del app
 
-    Button button;
-    Button button2;
+    Button button;    //Se declaran los botones, textiews, textinputs y un spinner
+    Button button2;   //Estos son creados y modelados en activity_main.xml, usando la herramienta de android studio
     TextView result1;
     TextView result2;
     TextView result3;
@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     Spinner flight;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {//Metodo OnCreate, el cual comienza en cuanto se abre la aplicacion
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        result1 = findViewById(R.id.result1);
+        result1 = findViewById(R.id.result1);//Se vinculan los elementos declarados al principio con sus equivalentes en el xml
         result2 = findViewById(R.id.result2);
         result3 = findViewById(R.id.result3);
         result4 = findViewById(R.id.result4);
@@ -49,24 +49,43 @@ public class MainActivity extends AppCompatActivity {
 
         flight = findViewById(R.id.flight);
 
+        /*
+        * Se utiliza el array adapter para llamar al Resource creado en strings.xml, en res/values
+        * Seguidamente se procede a vincular el array con el spinner creado y vinculado, esto con el
+        * fin de poder desplegar la lista de vuelos en el dropdown menu
+        */
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this, R.array.flights, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         flight.setAdapter(adapter);
 
+        /*
+        * Se le asigna al boton un onclicklistener, el cual se encarga de esperar a que el boton
+        * etiquetado para el scanner sea presionado. Si es el caso, entonces comenzara el metodo
+        * designado como onClick
+        * */
+
         button.setOnClickListener(new View.OnClickListener() {
+            /*
+            * Metodo onclick que se encarga de encender el scanner de codigos cuando el
+            * boton designado es presionado
+            * */
             @Override
             public void onClick(View view) {
 
-                IntentIntegrator integrador = new IntentIntegrator(MainActivity.this);
-                integrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                IntentIntegrator integrador = new IntentIntegrator(MainActivity.this); //Se crea un intent integrator (scanner)
+                integrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES); //Se determina que codigos detecta
                 integrador.setPrompt("Escaneo de Codigo");
-                integrador.setCameraId(0);
+                integrador.setCameraId(0); //Se le asigna la camara a usar
                 integrador.setBarcodeImageEnabled(true);
-                integrador.initiateScan();
+                integrador.initiateScan();//Se inicializa
             }
         });
 
+        /*
+        * Llama al metodo find() en cuanto el boton de buscar es presionado
+        * Este boton corresponde al de busqueda de maletas por id
+        * */
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,14 +95,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void find(String codigo){
+
+    /*
+    * Metodo find, encargado de llamar al api y recibir los datos solicitados, para luego mostrarlos en
+    * pantalla
+    * */
+    private void find(String codigo){ //Se llama a retrofit, el cual es el encargado de llamar al api utilizando los distintos enlaces de requests
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://localhost:7107/").addConverterFactory(GsonConverterFactory.create()).build();
-        MaletaAPI maletaAPI = retrofit.create(MaletaAPI.class);
-        Call<Maleta> call=maletaAPI.find(codigo);
+        MaletaAPI maletaAPI = retrofit.create(MaletaAPI.class); //Crea un objeto tipo MaletaAPI, la cual es una interfaz creada en el paquete interfaces
+        Call<Maleta> call=maletaAPI.find(codigo);//Llama a la clase Maleta para interactuar con la interfaz
         call.enqueue(new Callback<Maleta>() {
             @Override
             public void onResponse(Call<Maleta> call, Response<Maleta> response) {
-                try {
+                try { //Llamada al api. Si la respuesta es exitosa, obtiene los datos de la maleta
 
                     if(response.isSuccessful()){
                         Maleta m = response.body();
@@ -98,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Maleta> call, Throwable t) {
+            public void onFailure(Call<Maleta> call, Throwable t) { //En caso de no poder conectarse, despliega mensaje de error
 
                 Toast.makeText(MainActivity.this, "Error al intentar conectar", Toast.LENGTH_SHORT).show();
             }
