@@ -6,13 +6,15 @@ import { Suitcase } from '../classes/suitcase';
 })
 
 /**
- * Almacena las maletas registradas.
+ * Servicio utilizado para compartir la data almacenada.
  */
 export class DataService {
 
   public baggage: Suitcase[];
+  public logged: boolean;
   constructor() {
     this.baggage = [];
+    this.logged = false;
   }
 
   /**
@@ -22,4 +24,5 @@ export class DataService {
   add(suitcase: Suitcase) {
     this.baggage.push(suitcase);
   }
+
 }

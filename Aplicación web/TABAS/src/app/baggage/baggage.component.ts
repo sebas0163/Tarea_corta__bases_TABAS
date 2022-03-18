@@ -187,7 +187,7 @@ export class BaggageComponent implements OnInit {
         new Line([0, -10], [515, -10]).end
       ]).end
     );
-    this.pdf.add(new Columns(["1", "MALETA", "Unidad", "1.00",
+    this.pdf.add(new Columns([this.bill.numeroLinea, this.bill.detalle, "Unidad", this.bill.cantidad,
       "20,566.37", "20,566.37", "20,566.37", "20,900.00"]).columnGap(1).end);
     this.pdf.add("\n");
     this.pdf.add(new Columns([
@@ -227,7 +227,7 @@ export class BaggageComponent implements OnInit {
       ]).end
     );
     this.pdf.add(new Columns([new Txt("Moneda").alignment("right").bold().fontSize(12).end,
-      "CRC",
+    this.bill.codigoMoneda,
     ]).alignment("right").columnGap(1).end);
     this.pdf.add(new Columns([new Txt("Tipo de cambio").alignment("right").bold().fontSize(12).end,
       "1.00",]).alignment("right").columnGap(1).end);
