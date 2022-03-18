@@ -28,7 +28,7 @@ export class BaggageComponent implements OnInit {
     "Unid", "MALETA", "MALETA", "20566.37", "20566.37", "20566.37", "01", "08", "13", "333.63", "333.63",
     "20900", "CRC", "1", "20566.37", "20566.37", "20566.37", "20566.37", "333.63", "20900");
 
-  constructor(private router: Router, private data: DataService, private api:ApiService) {
+  constructor(private router: Router, private data: DataService, private api: ApiService) {
     this.baggage = this.data.baggage;
     this.apiKey = "0BE5BE73D069FAD3B82D584BFC3861EBC451";
     PdfMakeWrapper.setFonts(pdfFonts);
@@ -60,15 +60,15 @@ export class BaggageComponent implements OnInit {
     //     Password: "0BE5BE73D069FAD3B82D584BFC3861EBC451",
     //     To: 'stevealv@gmail.com',
     //     From: "stevealv@hotmail.com",
-    //     Subject: "Example 2 attch",
-    //     Body: "Example of xml and pdf.",
+    //     Subject: "Factura MALETA TEC Airlines",
+    //     Body: "Se adjunta copia de la factura.",
     //     Attachments: [
     //       {
-    //         name: "e.xml",
+    //         name: "factura.xml",
     //         data: dataUri
     //       },
     //       {
-    //         name: "e.pdf",
+    //         name: "factura.pdf",
     //         data: dataUripdf
     //       }]
     //   }).then(
@@ -109,9 +109,9 @@ export class BaggageComponent implements OnInit {
     this.pdf.add(title);
     this.pdf.add("\n");
     this.pdf.add("\n");
-    this.pdf.add(new Columns([clave, this.bill.clave]).columnGap(1).end);
+    this.pdf.add(new Columns([clave, "506081119003101517480605000"]).columnGap(1).end);
     this.pdf.add(new Columns([nCons, this.bill.numeroConsecutivo]).columnGap(1).end);
-    this.pdf.add(new Columns([fechaEmi, this.bill.fechaEmision]).columnGap(1).end);
+    this.pdf.add(new Columns([fechaEmi, "7/02/2022  16:39:27"]).columnGap(1).end);
     this.pdf.add(new Columns([codigoAct, this.bill.codigoActividad]).columnGap(1).end);
     this.pdf.add(new Columns([CondicionVenta, 'Contado']).columnGap(1).end);
     this.pdf.add("\n");

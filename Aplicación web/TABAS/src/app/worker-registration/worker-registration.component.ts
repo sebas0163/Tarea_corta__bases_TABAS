@@ -16,11 +16,10 @@ export class WorkerRegistrationComponent implements OnInit {
     nombre2: new FormControl(''),
     apellido1: new FormControl(''),
     apellido2: new FormControl(''),
+    correo: new FormControl(''),
+    contrasena: new FormControl(''),
     rol: new FormControl(''),
-    cedula: new FormControl(''),
-    // usuario: new FormControl(''),
-    // password: new FormControl(''),
-    // email: new FormControl('')
+    cedula: new FormControl('')
   })
 
   constructor(private api: ApiService, private router: Router) { }
@@ -36,6 +35,7 @@ export class WorkerRegistrationComponent implements OnInit {
     this.api.postWorker(form).subscribe(data => {
       console.log(data);
     });
+
     this.leave();
   }
 

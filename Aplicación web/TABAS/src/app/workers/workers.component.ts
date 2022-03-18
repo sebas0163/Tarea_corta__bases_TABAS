@@ -10,12 +10,15 @@ import { ApiService } from '../services/api.service';
 })
 export class WorkersComponent implements OnInit {
 
-  headers = ["Nombre", "Apellidos", "Cédula", "Rol", "Nombre de usuario", "Correo electrónico"];
+  headers = ["Nombre", "Apellidos", "Cédula", "Rol", "Correo electrónico"];
   workers: WorkerI[] = [];
 
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
     this.showWorkers();
   }
 
