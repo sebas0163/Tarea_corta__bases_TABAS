@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Suitcase } from '../classes/suitcase';
+import { reporte } from '../models/reporte.interface';
+import { vuelo } from '../models/vuelo.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +9,13 @@ import { Suitcase } from '../classes/suitcase';
 export class DataService {
 
   public baggage: Suitcase[];
+  public conciliacion: vuelo[];
 
-  public information:any;
+  public information: reporte[];
   constructor() {
     this.baggage = [];
-    this.information = null;
+    this.information = [];
+    this.conciliacion =[];
   }
 
   add(suitcase: Suitcase) {
@@ -21,7 +25,11 @@ export class DataService {
    * Funcion que define el json para ser leido en el reporte
    * @param dato documento json
    */
-  setJson(dato:any){
+  setJson(dato: any){
     this.information = dato;
+    //this.information = dato;
+  }
+  setJsonConci(dato: any){
+    this.conciliacion = dato;
   }
 }

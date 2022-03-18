@@ -25,7 +25,7 @@ export class ReportComponent implements OnInit {
    * Funcion encargada de eliminar la informacion del reporte una vez el componente sea cerrado
    */
   restaurarJson(){
-    this.data.information = null;
+    this.data.information = [];
   }
   /**
    * Funcion encargada de tomar el reporte y convertirlo en documento pdf

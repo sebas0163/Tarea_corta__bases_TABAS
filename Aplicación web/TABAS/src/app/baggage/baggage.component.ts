@@ -49,12 +49,12 @@ export class BaggageComponent implements OnInit {
      Creada por Sebastian
   */
   getBaggageConciliation(){
-    //this.data.setJson(Conciliacion);
+    //this.data.setJsonConci(Conciliacion);
     this.api.getConciliation().subscribe((data: any) => {
       var a = data;
       a = a.replace(/'/g, '"');
       var result = JSON.parse(a);
-      this.data.setJson(result);
+      this.data.setJsonConci(result);
       console.log(result);
     })
   }

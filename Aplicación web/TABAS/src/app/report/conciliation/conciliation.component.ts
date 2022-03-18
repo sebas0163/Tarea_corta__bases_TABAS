@@ -15,7 +15,7 @@ export class ConciliationComponent implements OnInit {
 
   information: any; // variable encargada de guardar la información del json entregado por el API
   constructor(private data:DataService) {
-    this.information = this.data.information;
+    this.information = this.data.conciliacion;
    }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class ConciliationComponent implements OnInit {
    * Funcion que se encarga de eliminar los elementos del Json al cerrar el reporte
    */
   restaurarJson(){
-    this.data.information = null;
+    this.data.conciliacion = [];
   }
   /**
    * Funcion encargada de tomar los elementos del reporte en la pagina web y transformarlos en un pdf
