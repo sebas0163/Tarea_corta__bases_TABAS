@@ -50,33 +50,33 @@ export class BaggageComponent implements OnInit {
 
     this.pdf.add(await new Img('../../assets/logo.png').build());
     this.formatPDF();
-    this.pdf.create().open();
+    //this.pdf.create().open();
 
-    // this.pdf.create().getBase64(function (encodedString: any) {
-    //   var dataUripdf = "data:" + "pdf" + ";base64," + encodedString;
-    //   Email.send({
-    //     Host: "smtp.elasticemail.com",
-    //     Username: "stevealv@hotmail.com",
-    //     Password: "0BE5BE73D069FAD3B82D584BFC3861EBC451",
-    //     To: 'stevealv@gmail.com',
-    //     From: "stevealv@hotmail.com",
-    //     Subject: "Factura MALETA TEC Airlines",
-    //     Body: "Se adjunta copia de la factura.",
-    //     Attachments: [
-    //       {
-    //         name: "factura.xml",
-    //         data: dataUri
-    //       },
-    //       {
-    //         name: "factura.pdf",
-    //         data: dataUripdf
-    //       }]
-    //   }).then(
-    //     (message: any) => alert(message)
-    //   );
-    //   console.log("email sent");
-    // }
-    // );
+    this.pdf.create().getBase64(function (encodedString: any) {
+      var dataUripdf = "data:" + "pdf" + ";base64," + encodedString;
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "stevealv@hotmail.com",
+        Password: "0BE5BE73D069FAD3B82D584BFC3861EBC451",
+        To: 'stevealv@gmail.com',
+        From: "stevealv@hotmail.com",
+        Subject: "Factura MALETA TEC Airlines",
+        Body: "Se adjunta copia de la factura.",
+        Attachments: [
+          {
+            name: "factura.xml",
+            data: dataUri
+          },
+          {
+            name: "factura.pdf",
+            data: dataUripdf
+          }]
+      }).then(
+        (message: any) => alert(message)
+      );
+      console.log("email sent");
+    }
+    );
 
     alert("Factura enviada a Hacienda. Y copia enviada al cliente.");
   }
