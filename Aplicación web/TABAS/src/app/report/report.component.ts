@@ -21,11 +21,17 @@ export class ReportComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.solicitarInformacion();
+  }
+  /**
+   * Función que solicita al API un json de las maletas por Usuario
+   */
+   solicitarInformacion(){
     this.api.getMaletasUsuarios().subscribe((data: any) => {
       var a = data;
       a = a.replace(/'/g, '"');
       var result = JSON.parse(a);
-      this.information = result;
+      this.information =result;
       console.log(result);
     })
   }

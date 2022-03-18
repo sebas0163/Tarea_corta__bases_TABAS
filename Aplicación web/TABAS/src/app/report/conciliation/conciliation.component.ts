@@ -20,6 +20,12 @@ export class ConciliationComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.solicitarInformacion();
+  }
+  /**
+   * Función que solicita al API un json de las maletas por Usuario
+   */
+  solicitarInformacion(){
     this.api.getConciliation().subscribe((data: any) => {
       var a = data;
       a = a.replace(/'/g, '"');
