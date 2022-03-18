@@ -1,18 +1,9 @@
 using System;
 namespace TabasAPI.Models
 {
-    public class Reporte
-    {
-        public string numero;
-        public string tipo;
-        public string capacidad;
-        public string capacidad_maletas;
-        public string maletas_bagcart;
-        public string maletas_avion;
-        public string maletas_rechazadas;
-        
-
-    }
+    /**
+    Clase para modelar al trabajador
+    */
     public class Trabajador
     {
         public string nombre1{get; set;}
@@ -26,6 +17,9 @@ namespace TabasAPI.Models
 
     }
 
+    /**
+    Clase para modelar las maletas
+    */
     public class Maletas
     {
         public int peso{get; set;} 
@@ -34,6 +28,9 @@ namespace TabasAPI.Models
         public string color{get; set;}
     }
 
+    /**
+    Clase para modelar al usuario
+    */
     public class Usuario
     {
         public string nombre1 {get; set;}
