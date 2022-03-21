@@ -16,7 +16,7 @@ export class WorkersComponent implements OnInit {
   workers: WorkerI[] = [];
 
   constructor(private router: Router, private api: ApiService, private route: ActivatedRoute, private app: AppComponent) {
-    route.params.subscribe(val => {
+    this.route.params.subscribe(val => {
 
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.showWorkers();
