@@ -1,9 +1,9 @@
-<h3>Registro de trabajadores</h3>
+<h3 id="titulo">Registro de trabajadores</h3>
 <br>
-<button type="button" class="btn btn-primary" (click)="addWorker()">Agregar Trabajador</button>
+<button id="addTrabajadores" type="button" class="btn btn-dark" (click)="addWorker()">Agregar Trabajador</button>
 <br>
 <br>
-<table class="table">
+<table class="table table-dark">
     <thead>
         <tr>
             <th scope="col" *ngFor="let column of headers">
