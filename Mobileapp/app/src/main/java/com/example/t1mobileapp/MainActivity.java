@@ -97,21 +97,42 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
                 find(Integer.parseInt(bagid.getText().toString()));
             }
         });
+        /*
+        * Este boton asigna las maletas al bagcart
+        * El boton verifica que la maleta paso la inspeccion y que
+        * se haya buscado una maleta
+        * */
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
-                CharSequence text = "Agregado al bagcart";
-                int duration = Toast.LENGTH_SHORT;
-                result1.setText("");
-                result2.setText("");
-                result3.setText("");
-                result4.setText("");
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                if(result3.getText() == "Rechazada"){
+                    Context context = getApplicationContext();
+                    CharSequence text = "La maleta escogida no paso la inspeccion";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else if(result3.getText() == ""){
+                    Context context = getApplicationContext();
+                    CharSequence text = "Primero busque una maleta";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else{
+                    Context context = getApplicationContext();
+                    CharSequence text = "Agregado al bagcart";
+                    int duration = Toast.LENGTH_SHORT;
+                    result1.setText("");
+                    result2.setText("");
+                    result3.setText("");
+                    result4.setText("");
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {//Se le asigna un display de mensaje al boton 4
             @Override
             public void onClick(View view) {
                 Context context = getApplicationContext();
@@ -144,16 +165,6 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
                 result4.setText(maleta.getPeso());
             }
         }
-
-        /*if(codigo == m.getNumero()){
-            result1.setText(m.getColor());
-            result2.setText(m.getCosto());
-            result3.setText(m.getEstado());
-            result4.setText(m.getPeso());
-        }
-        else if(codigo == 2){
-
-        }*/
 
     }
 }
