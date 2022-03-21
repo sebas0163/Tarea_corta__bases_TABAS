@@ -9,6 +9,14 @@ public class Maleta { //Declaracion de atributos
     private String color;
     private String estado;
 
+    public Maleta(String peso, String costo, int numero, String color, String estado) {
+        this.peso = peso;
+        this.costo = costo;
+        this.numero = numero;
+        this.color = color;
+        this.estado = estado;
+    }
+
     public String getPeso() {
         return peso;
     }

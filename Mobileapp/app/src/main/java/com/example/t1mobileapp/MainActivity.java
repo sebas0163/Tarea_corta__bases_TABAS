@@ -4,28 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
-import com.example.t1mobileapp.interfaces.MaletaAPI;
 import com.example.t1mobileapp.models.Maleta;
+import com.example.t1mobileapp.models.maleta1;
+import com.example.t1mobileapp.models.maleta2;
+import com.example.t1mobileapp.models.maleta3;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.zxing.integration.android.IntentIntegrator;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity { //Se declara la clase main activity, encargada de manejar la funcionalidad del app
-    Maleta m = new Maleta();
+
+    Maleta maletas[] = new Maleta[]{
+            new maleta1("45kg", "1500", 1, "Rojo", "Aprovada"),
+            new maleta2("60kg", "2200", 2, "Verde", "Rechazada"),
+            new maleta3("50kg", "1700", 3, "Azul", "Aprovada")
+    };
+
     Button button;    //Se declaran los botones, textiews, textinputs y un spinner
     Button button2;   //Estos son creados y modelados en activity_main.xml, usando la herramienta de android studio
     Button button3;
@@ -129,24 +129,31 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
     * */
     private void find(int codigo){ //Se Busca la maleta en el set predeterminado
 
-        m.setNumero(1);
-        m.setColor("rojo");
-        m.setCosto("1200 colones");
-        m.setEstado("Escaneada");
-        m.setPeso("45kg");
+        if(codigo > 3){
+            result1.setText("Maleta no registrada");
+            result2.setText("Maleta no registrada");
+            result3.setText("Maleta no registrada");
+            result4.setText("Maleta no registrada");
+        }
+        else{
+            for(int i=0; i < codigo; ++i){
+                Maleta maleta = maletas[i];
+                result1.setText(maleta.getColor());
+                result2.setText(maleta.getCosto());
+                result3.setText(maleta.getEstado());
+                result4.setText(maleta.getPeso());
+            }
+        }
 
-        if(codigo == m.getNumero()){
+        /*if(codigo == m.getNumero()){
             result1.setText(m.getColor());
             result2.setText(m.getCosto());
             result3.setText(m.getEstado());
             result4.setText(m.getPeso());
         }
         else if(codigo == 2){
-            result1.setText("Maleta no registrada");
-            result2.setText("Maleta no registrada");
-            result3.setText("Maleta no registrada");
-            result4.setText("Maleta no registrada");
-        }
+
+        }*/
 
     }
 }
