@@ -31,10 +31,12 @@ export class WorkerRegistrationComponent implements OnInit {
    * postForm: Reune los datos del nuevo trabajador y lo registra en la base de datos.
    * @param form Trabajador nuevo.
    */
-  postForm(form: WorkerI) {
+  async postForm(form: WorkerI) {
     this.api.postWorker(form).subscribe(data => {
       console.log(data);
     });
+
+    await new Promise(f => setTimeout(f, 50));
 
     this.leave();
   }
