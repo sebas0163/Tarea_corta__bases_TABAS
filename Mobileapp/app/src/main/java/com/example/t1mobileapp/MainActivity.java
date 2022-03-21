@@ -2,30 +2,34 @@ package com.example.t1mobileapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
-import com.example.t1mobileapp.interfaces.MaletaAPI;
 import com.example.t1mobileapp.models.Maleta;
+import com.example.t1mobileapp.models.maleta1;
+import com.example.t1mobileapp.models.maleta2;
+import com.example.t1mobileapp.models.maleta3;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.zxing.integration.android.IntentIntegrator;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity { //Se declara la clase main activity, encargada de manejar la funcionalidad del app
 
+    Maleta maletas[] = new Maleta[]{
+            new maleta1("45kg", "1500", 1, "Rojo", "Aprovada"),
+            new maleta2("60kg", "2200", 2, "Verde", "Rechazada"),
+            new maleta3("50kg", "1700", 3, "Azul", "Aprovada")
+    };
+
     Button button;    //Se declaran los botones, textiews, textinputs y un spinner
     Button button2;   //Estos son creados y modelados en activity_main.xml, usando la herramienta de android studio
+    Button button3;
+    Button button4;
     TextView result1;
     TextView result2;
     TextView result3;
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
 
         button = findViewById(R.id.button);
         button2 =findViewById(R.id.button2);
+        button3 =findViewById(R.id.button3);
+        button4 =findViewById(R.id.button4);
 
         flight = findViewById(R.id.flight);
 
@@ -56,7 +62,6 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
         */
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this, R.array.flights, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-
         flight.setAdapter(adapter);
 
         /*
@@ -89,43 +94,66 @@ public class MainActivity extends AppCompatActivity { //Se declara la clase main
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                find(bagid.getText().toString());
-
+                find(Integer.parseInt(bagid.getText().toString()));
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = getApplicationContext();
+                CharSequence text = "Agregado al bagcart";
+                int duration = Toast.LENGTH_SHORT;
+                result1.setText("");
+                result2.setText("");
+                result3.setText("");
+                result4.setText("");
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = getApplicationContext();
+                CharSequence text = "Maleta Asignada a vuelo";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
 
     }
 
     /*
-    * Metodo find, encargado de llamar al api y recibir los datos solicitados, para luego mostrarlos en
-    * pantalla
+    * Metodo find, encargado de buscar la maleta necesaria
     * */
-    private void find(String codigo){ //Se llama a retrofit, el cual es el encargado de llamar al api utilizando los distintos enlaces de requests
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://localhost:7107/").addConverterFactory(GsonConverterFactory.create()).build();
-        MaletaAPI maletaAPI = retrofit.create(MaletaAPI.class); //Crea un objeto tipo MaletaAPI, la cual es una interfaz creada en el paquete interfaces
-        Call<Maleta> call=maletaAPI.find(codigo);//Llama a la clase Maleta para interactuar con la interfaz
-        call.enqueue(new Callback<Maleta>() {
-            @Override
-            public void onResponse(Call<Maleta> call, Response<Maleta> response) {
-                try { //Llamada al api. Si la respuesta es exitosa, obtiene los datos de la maleta
+    private void find(int codigo){ //Se Busca la maleta en el set predeterminado
 
-                    if(response.isSuccessful()){
-                        Maleta m = response.body();
-                        result1.setText(m.getColor());
-                        result2.setText(m.getCosto());
-                        result3.setText(m.getEstado());
-                        result4.setText(m.getPeso());
-                    }
-                }catch (Exception ex){
-                    Toast.makeText(MainActivity.this, ex.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+        if(codigo > 3){
+            result1.setText("Maleta no registrada");
+            result2.setText("Maleta no registrada");
+            result3.setText("Maleta no registrada");
+            result4.setText("Maleta no registrada");
+        }
+        else{
+            for(int i=0; i < codigo; ++i){
+                Maleta maleta = maletas[i];
+                result1.setText(maleta.getColor());
+                result2.setText(maleta.getCosto());
+                result3.setText(maleta.getEstado());
+                result4.setText(maleta.getPeso());
             }
+        }
 
-            @Override
-            public void onFailure(Call<Maleta> call, Throwable t) { //En caso de no poder conectarse, despliega mensaje de error
+        /*if(codigo == m.getNumero()){
+            result1.setText(m.getColor());
+            result2.setText(m.getCosto());
+            result3.setText(m.getEstado());
+            result4.setText(m.getPeso());
+        }
+        else if(codigo == 2){
 
-                Toast.makeText(MainActivity.this, "Error al intentar conectar", Toast.LENGTH_SHORT).show();
-            }
-        });
+        }*/
+
     }
 }
