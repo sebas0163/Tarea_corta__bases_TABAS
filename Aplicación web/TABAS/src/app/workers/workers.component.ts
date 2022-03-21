@@ -18,8 +18,8 @@ export class WorkersComponent implements OnInit {
   constructor(private router: Router, private api: ApiService, private route: ActivatedRoute, private app: AppComponent) {
     this.route.params.subscribe(val => {
 
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.showWorkers();
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     });
     this.app.registerView = 'regView2';
   }
